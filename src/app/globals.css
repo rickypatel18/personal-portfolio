@@ -38,6 +38,35 @@ a {
   .section-title {
     @apply text-3xl font-bold mb-8 text-center;
   }
+
+  .flex-i {
+    @apply flex  items-center;
+  }
+  .flex-j {
+    @apply flex justify-center;
+  }
+  .flex-j-i {
+    @apply flex justify-center items-center;
+  }
+
+  .logo-text {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+  .text-page-heading {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  .text-subheading {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+  .text-3xl-l {
+    @apply text-2xl lg:text-3xl;
+  }
+  .card-title {
+    @apply text-lg lg:text-xl;
+  }
+  .card-description {
+    @apply text-sm lg:text-lg;
+  }
 }
 
 @keyframes fadeIn {

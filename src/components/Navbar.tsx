@@ -31,8 +31,8 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-50">
       <div className="container max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold text-primary">
+        <div className="flex-i justify-between h-16">
+          <Link href="/" className="text-2xl font-bold text-primary">
             Devfolio&trade;
           </Link>
 
@@ -45,9 +45,8 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`hover:text-primary transition-colors ${
-                    isActive ? "font-normal text-primary" : ""
-                  }`}
+                  className={`hover:text-primary transition-colors ${isActive ? "font-normal text-primary" : ""
+                    }`}
                 >
                   {item.label}
                 </Link>
@@ -55,7 +54,7 @@ export default function Navbar() {
             })}
             <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-black transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -105,11 +104,10 @@ export default function Navbar() {
                     >
                       <Link
                         href={item.href}
-                        className={`block py-2 hover:text-primary transition-colors rounded-xl pl-3 hover:bg-gray-200 dark:hover:bg-gray-700  ${
-                          isActive
+                        className={`block py-2 hover:text-primary transition-colors rounded-xl pl-3 hover:bg-gray-200 dark:hover:bg-gray-700  ${isActive
                             ? "font-normal text-primary bg-gray-200 dark:bg-gray-700  "
                             : ""
-                        }`}
+                          }`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.label}
@@ -127,7 +125,7 @@ export default function Navbar() {
                       toggleTheme();
                       setIsMobileMenuOpen(false);
                     }}
-                    className="flex items-center py-2 hover:text-primary transition-colors"
+                    className="flex-i py-2 hover:text-primary transition-colors"
                   >
                     {theme === "dark" ? (
                       <>

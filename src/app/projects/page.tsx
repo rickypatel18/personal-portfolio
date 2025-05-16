@@ -14,7 +14,7 @@ export default function Projects() {
   return (
     <div className="container max-w-7xl mx-auto py-12">
       <motion.h1
-        className="text-4xl font-bold mb-4 text-center"
+        className="text-page-heading font-bold mb-4 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -40,12 +40,12 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-white dark:bg-dark/50 rounded-lg shadow-md overflow-hidden"
+            className="bg-gray-100  dark:bg-dark/50 rounded-lg shadow-md overflow-hidden"
             variants={fadeInUp}
             {...cardHoverSmall}
           >
             <motion.div
-              className="aspect-video bg-gray-200 dark:bg-gray-800"
+              className="aspect-video bg-gray-200 dark:bg-gray-800 px-2 py-1"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -103,7 +103,7 @@ export default function Projects() {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
+                  className="flex-i gap-2 text-secondary hover:text-primary transition-colors"
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -114,7 +114,7 @@ export default function Projects() {
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
+                  className="flex-i gap-2 text-secondary hover:text-primary transition-colors"
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >

@@ -15,7 +15,7 @@ export default function About() {
   return (
     <div className="container max-w-7xl mx-auto py-12">
       <motion.h1
-        className="text-4xl font-bold mb-8 text-center"
+        className="text-page-heading font-bold mb-8 text-center"
         {...fadeInDown}
       >
         About Me
@@ -48,21 +48,21 @@ export default function About() {
           animate="animate"
         >
           <motion.div
-            className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHover}
           >
             <FaCode className="h-8 w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Frontend</h3>
             <ul className="text-secondary space-y-2">
-              <li>HTML5 / CSS3</li>
+              <li>HTML / CSS</li>
               <li>JavaScript / TypeScript</li>
               <li>React.js / Next.js</li>
             </ul>
           </motion.div>
 
           <motion.div
-            className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHover}
           >
@@ -75,34 +75,28 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHover}
           >
             <FaGraduationCap className="h-8 w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Worked with</h3>
             <ul className="text-secondary space-y-2">
-              <li>Tailwind</li>
-              <li>Bootstrap</li>
-              <li>Material UI</li>
-              <li>Shadcn UI</li>
-              <li>Hero UI</li>
-              <li>Radix UI</li>
-              <li>Chakra UI</li>
-              <li>Framer Motion</li>
-              <li>GSAP</li>
-              <li>Zod</li>
-              <li>GSAP</li>
+              <li>Tailwind / Bootstrap</li>
+              <li>Material UI / Radix UI</li>
+              <li>Shadcn UI / Hero UI</li>
+              <li>Framer Motion / GSAP</li>
+              <li>Figma</li>
               <li>D3 chart</li>
             </ul>
           </motion.div>
 
           <motion.div
-            className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaLaptopCode className="h-8 w-8 text-primary mb-4" />
+            <FaGraduationCap className="h-8 w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Tools & Other</h3>
             <ul className="text-secondary space-y-2">
               <li>Git / GitHub</li>
@@ -110,14 +104,15 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHover}
           >
             <FaLaptopCode className="h-8 w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Backend</h3>
             <ul className="text-secondary space-y-2">
-              <li>Haven&apos;t Mastery</li>
+              <li>Haven&apos;t Mastery in technology</li>
+              <li>Prisma / MongoDB</li>
             </ul>
           </motion.div>
         </motion.div>
@@ -135,7 +130,7 @@ export default function About() {
           animate="animate"
         >
           <motion.div
-            className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHoverSmall}
           >
@@ -172,7 +167,7 @@ export default function About() {
           animate="animate"
         >
           <motion.div
-            className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHoverSmall}
           >

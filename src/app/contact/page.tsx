@@ -59,7 +59,10 @@ export default function Contact() {
 
   return (
     <div className="container max-w-7xl mx-auto py-12">
-      <motion.h1 className="text-4xl font-bold mb-8 text-center" {...fadeInUp}>
+      <motion.h1
+        className="text-page-heading font-bold mb-8 text-center"
+        {...fadeInUp}
+      >
         Contact Me
       </motion.h1>
 
@@ -67,7 +70,7 @@ export default function Contact() {
         {/* Contact Information */}
         <motion.div className="space-y-8" {...slideInLeft}>
           <motion.div {...fadeInUp}>
-            <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
+            <h2 className="text-subheading font-semibold mb-4">Get in Touch</h2>
             <p className="text-secondary">
               I&apos;m always open to discussing new projects, creative ideas,
               or opportunities to be part of your visions.
@@ -81,7 +84,7 @@ export default function Contact() {
             animate="animate"
           >
             <motion.div
-              className="flex items-center gap-4"
+              className="flex-i gap-4"
               variants={fadeInUp}
               whileHover={{ x: 10 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -99,7 +102,7 @@ export default function Contact() {
             </motion.div>
 
             <motion.div
-              className="flex items-center gap-4"
+              className="flex-i gap-4"
               variants={fadeInUp}
               whileHover={{ x: 10 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -117,7 +120,7 @@ export default function Contact() {
             </motion.div>
 
             <motion.div
-              className="flex items-center gap-4"
+              className="flex-i gap-4"
               variants={fadeInUp}
               whileHover={{ x: 10 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -133,7 +136,7 @@ export default function Contact() {
 
         {/* Contact Form */}
         <motion.div
-          className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+          className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
           {...slideInRight}
         >
           <motion.form
@@ -155,7 +158,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:outline-none focus:border-primary"
               />
             </motion.div>
 
@@ -171,7 +174,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:outline-none focus:border-primary"
               />
             </motion.div>
 
@@ -190,14 +193,14 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:outline-none focus:border-primary"
               />
             </motion.div>
 
             <motion.button
               type="submit"
               disabled={status === "loading"}
-              className="w-full btn btn-primary"
+              className="w-full btn btn-primary card-title inline-block"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

@@ -13,5 +13,5 @@ export interface Blog {
   date: string;
   readTime: string;
   slug: string;
-  tasks:string
+  tasks: string[]
 }

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPhoneSquare } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { fadeInUp, fadeIn, scaleIn } from "../utils/animation";
 
@@ -12,20 +12,20 @@ export default function Hero() {
       <div className="container max-w-7xl mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
-            className="flex justify-center items-center mb-4"
+            className="flex-j-i mb-4"
             {...scaleIn}
             transition={{ delay: 0.2 }}
           >
             <Image
-              src="/profile.avif"
+              src="/profile.jpg"
               alt="Profile"
               width={100}
               height={100}
-              className="rounded-full mb-4 w-32 h-32 object-cover ring-2 ring-primary"
+              className="rounded-full mb-4 w-32 h-32 object-cover ring-5 ring-black"
             />
           </motion.div>
           <motion.h1
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-page-heading md:text-6xl font-bold mb-6"
             {...fadeInUp}
             transition={{ delay: 0.3 }}
           >
@@ -39,14 +39,14 @@ export default function Hero() {
             </motion.span>
           </motion.h1>
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8"
+            className="text-subheading text-gray-600 dark:text-gray-300 mb-8"
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
-            Frontend Developer | Passionate | Team Player
+            Frontend Developer | Web Devloper | Frontend Designer
           </motion.p>
           <motion.div
-            className="flex justify-center space-x-4 mb-8"
+            className="flex-j space-x-4 mb-8"
             {...fadeInUp}
             transition={{ delay: 0.5 }}
           >
@@ -78,18 +78,18 @@ export default function Hero() {
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
             >
-              <FaTwitter />
+              <FaPhoneSquare />
             </motion.a>
           </motion.div>
           <motion.div
-            className="flex flex-col md:flex-row justify-center gap-4"
+            className="flex-j flex-col md:flex-row  gap-4"
             {...fadeInUp}
             transition={{ delay: 0.6 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/projects"
-                className="bg-primary inline-block w-full md:w-auto text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+                className="text-subheading bg-primary inline-block w-full md:w-auto text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
               >
                 View Projects
               </Link>
@@ -97,7 +97,7 @@ export default function Hero() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/contact"
-                className=" inline-block w-full bg-gray-500  md:w-auto text-gray-800 dark:text-white px-8 py-3 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                className="text-subheading inline-block w-full bg-gray-200 hover:bg-gray-300 dark:text-black md:w-auto text-gray-800 px-8 py-3 rounded-lg  dark:hover:bg-gray-300 transition-colors"
               >
                 Contact Me
               </Link>

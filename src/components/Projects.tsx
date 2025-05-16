@@ -11,7 +11,7 @@ export default function Projects() {
     <section className="py-20">
       <div className="container max-w-7xl mx-auto px-4">
         <motion.h2
-          className="text-3xl font-bold mb-12 text-center"
+          className="text-3xl-l font-bold mb-12 text-center"
           {...fadeInUp}
         >
           Featured Projects
@@ -26,7 +26,7 @@ export default function Projects() {
           {projects.map((project) => (
             <motion.article
               key={project.title}
-              className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
+              className="bg-gray-100 dark:bg-dark/50 rounded-lg shadow-md p-6"
               variants={fadeInUp}
               {...cardHoverSmall}
             >
@@ -40,14 +40,14 @@ export default function Projects() {
                 />
               </div>
               <motion.h3
-                className="text-xl font-semibold mb-2"
+                className="card-title font-semibold mb-2"
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 {project.title}
               </motion.h3>
               <motion.p
-                className="text-gray-600 dark:text-gray-300 mb-4"
+                className=" card-description text-gray-600 dark:text-gray-300 mb-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -63,7 +63,7 @@ export default function Projects() {
                 {project.technologies.map((tech) => (
                   <motion.span
                     key={tech}
-                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-base"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -81,7 +81,7 @@ export default function Projects() {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
+                  className="flex-i gap-2 text-secondary hover:text-primary transition-colors card-description"
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -92,7 +92,7 @@ export default function Projects() {
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
+                  className="card-description flex-i gap-2 text-secondary hover:text-primary transition-colors"
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >

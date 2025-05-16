@@ -11,7 +11,7 @@ export default function Blogs() {
     <section className="py-20">
       <div className="container max-w-7xl mx-auto px-4">
         <motion.h2
-          className="text-3xl font-bold mb-12 text-center"
+          className="text-3xl-l font-bold mb-12 text-center"
           {...fadeInUp}
         >
           Latest Blog Posts
@@ -26,13 +26,13 @@ export default function Blogs() {
           {blogs.map((blog) => (
             <motion.article
               key={blog.slug}
-              className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
+              className="bg-gray-100 dark:bg-dark/50 rounded-lg shadow-md p-6"
               variants={fadeInUp}
               {...cardHoverSmall}
             >
               <Link href={`/blogs/${blog.slug}`}>
                 <motion.h3
-                  className="text-xl font-semibold mb-2 hover:text-primary transition-colors"
+                  className="card-title font-semibold mb-2 hover:text-primary transition-colors"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -40,7 +40,7 @@ export default function Blogs() {
                 </motion.h3>
               </Link>
               <motion.p
-                className="text-gray-600 dark:text-gray-300 mb-4"
+                className="card-description text-gray-600 dark:text-gray-300 mb-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -48,20 +48,20 @@ export default function Blogs() {
                 {blog.excerpt}
               </motion.p>
               <motion.div
-                className="flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-4"
+                className="flex-i text-base text-gray-500 dark:text-gray-400 space-x-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
                 <motion.span
-                  className="flex items-center"
+                  className="flex-i"
                   whileHover={{ scale: 1.05 }}
                 >
                   <FaCalendarAlt className="mr-2" />
                   {new Date(blog.date).toLocaleDateString()}
                 </motion.span>
                 <motion.span
-                  className="flex items-center"
+                  className="flex-i"
                   whileHover={{ scale: 1.05 }}
                 >
                   <FaClock className="mr-2" />

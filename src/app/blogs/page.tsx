@@ -14,7 +14,7 @@ export default function Blogs() {
   return (
     <div className="container max-w-7xl mx-auto py-12">
       <motion.h1
-        className="text-4xl font-bold mb-8 text-center"
+        className="text-page-heading font-bold mb-8 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -31,7 +31,7 @@ export default function Blogs() {
         {blogs.map((blog, index) => (
           <motion.article
             key={index}
-            className="bg-white dark:bg-dark/50 rounded-lg shadow-md overflow-hidden"
+            className="bg-gray-100 dark:bg-dark/50 rounded-lg shadow-md overflow-hidden"
             variants={fadeInUp}
             {...cardHoverSmall}
           >
@@ -59,13 +59,13 @@ export default function Blogs() {
               </motion.p>
 
               <motion.div
-                className="flex items-center gap-4 text-sm text-secondary"
+                className="flex-i gap-4 text-sm text-secondary"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
                 <motion.div
-                  className="flex items-center gap-2"
+                  className="flex-i gap-2"
                   whileHover={{ scale: 1.05 }}
                 >
                   <FaCalendarAlt className="h-4 w-4" />
@@ -73,7 +73,7 @@ export default function Blogs() {
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center gap-2"
+                  className="flex-i gap-2"
                   whileHover={{ scale: 1.05 }}
                 >
                   <FaClock className="h-4 w-4" />
