@@ -12,7 +12,7 @@ import {
 
 export default function Blogs() {
   return (
-    <div className="container max-w-7xl mx-auto py-12">
+    <div className="container max-w-7xl mx-auto py-12 px-0">
       <motion.h1
         className="text-page-heading font-bold mb-8 text-center"
         initial={{ opacity: 0, y: -20 }}

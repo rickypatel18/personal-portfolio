@@ -13,7 +13,7 @@ import {
 
 export default function About() {
   return (
-    <div className="container max-w-7xl mx-auto py-12">
+    <div className="container max-w-7xl mx-auto py-12 px-4 md:px-4 2xl:px-0">
       <motion.h1
         className="text-page-heading font-bold mb-8 text-center"
         {...fadeInDown}
@@ -86,8 +86,7 @@ export default function About() {
               <li>Material UI / Radix UI</li>
               <li>Shadcn UI / Hero UI</li>
               <li>Framer Motion / GSAP</li>
-              <li>Figma</li>
-              <li>D3 chart</li>
+              
             </ul>
           </motion.div>
 
@@ -100,6 +99,8 @@ export default function About() {
             <h3 className="text-xl font-semibold mb-2">Tools & Other</h3>
             <ul className="text-secondary space-y-2">
               <li>Git / GitHub</li>
+              <li>Figma</li>
+              <li>D3 chart</li>
             </ul>
           </motion.div>
 

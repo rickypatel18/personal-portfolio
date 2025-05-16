@@ -12,7 +12,7 @@ import {
 
 export default function Projects() {
   return (
-    <div className="container max-w-7xl mx-auto py-12">
+    <div className="container max-w-7xl mx-auto py-12 px-0 ">
       <motion.h1
         className="text-page-heading font-bold mb-4 text-center"
         initial={{ opacity: 0, y: -20 }}
@@ -32,7 +32,7 @@ export default function Projects() {
       </motion.p>
 
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-8 "
         variants={staggerContainer}
         initial="initial"
         animate="animate"
