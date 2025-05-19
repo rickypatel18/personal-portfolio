@@ -48,7 +48,7 @@ export default function About() {
           animate="animate"
         >
           <motion.div
-            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHover}
           >
@@ -62,7 +62,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHover}
           >
@@ -75,7 +75,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHover}
           >
@@ -91,7 +91,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHover}
           >
@@ -105,7 +105,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHover}
           >
@@ -131,7 +131,7 @@ export default function About() {
           animate="animate"
         >
           <motion.div
-            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHoverSmall}
           >
@@ -168,7 +168,7 @@ export default function About() {
           animate="animate"
         >
           <motion.div
-            className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
+            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
             variants={fadeInUp}
             {...cardHoverSmall}
           >

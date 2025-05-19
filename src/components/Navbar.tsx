@@ -27,7 +27,8 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
-    { href: "/blogs", label: "Blogs" },
+    // { href: "/blogs", label: "Blogs" },
+    { href: "/cv", label: "CV" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -70,7 +71,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "anticipate" }}
     >
       <div className="w-full xl:container mx-auto px-4 sm:px-4 md:px-4">
-        <div className="rounded-xl max-w-7xl mx-auto backdrop-blur-xs bg-gray-300/60 dark:bg-slate-800/60 shadow-md my-3 m-0">
+        <div className="rounded-xl max-w-7xl mx-auto backdrop-blur-xs bg-gray-300/30 dark:bg-slate-800/60  my-3 m-0">
           <div className="flex items-center justify-between h-16 px-4">
             <Link href="/" className="text-2xl font-bold text-primary">
               Devfolio™
@@ -97,7 +98,7 @@ export default function Navbar() {
               })}
               <motion.button
                 onClick={toggleTheme}
-                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                className="p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
                 whileHover={{ scale: 1.1, rotate: 15 }}
                 whileTap={{ scale: 0.9 }}
                 title={
@@ -120,7 +121,7 @@ export default function Navbar() {
               {/* Wrapper for mobile button */}
               <motion.button
                 onClick={toggleTheme}
-                className="p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                className="p-2 mr-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
                 whileHover={{ scale: 1.1, rotate: 15 }}
                 whileTap={{ scale: 0.9 }}
                 title={
@@ -132,11 +133,11 @@ export default function Navbar() {
                 {theme === "dark" ? (
                   <SunIcon className="h-5 w-5 text-yellow-400" />
                 ) : (
-                  <MoonIcon className="h-5 w-5 text-slate-500" />
+                  <MoonIcon className="h-5 w-5 text-gray-600" />
                 )}
               </motion.button>
               <motion.button
-                className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                className="p-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
                 onClick={toggleMobileMenu}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -160,9 +161,9 @@ export default function Navbar() {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="md:hidden border-t border-gray-200/50 dark:border-gray-700/50" // Added border
+                className="md:hidden "
               >
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
                   {/* Tailwind's recommended mobile menu padding */}
                   {menuItems.map((item, index) => {
                     const isActive =
@@ -174,14 +175,14 @@ export default function Navbar() {
                         key={item.href}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05, ease: "easeOut" }} // Faster delay
+                        transition={{ delay: index * 0.05, ease: "easeOut" }}
                       >
                         <Link
                           href={item.href}
-                          className={`block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700 ${
+                          className={`block px-3 py-2 rounded-md text-base font-medium hover:text-primary dark:hover:text-primary hover:bg-gray-300 dark:hover:bg-gray-700 ${
                             isActive
-                              ? "font-semibold text-primary bg-gray-100 dark:bg-gray-700"
-                              : ""
+                              ? "font-semibold text-primary bg-gray-300 dark:bg-gray-700"
+                              : "text-gray-700 dark:text-gray-300"
                           }`}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
@@ -200,7 +201,7 @@ export default function Navbar() {
                         toggleTheme();
                         setIsMobileMenuOpen(false);
                       }}
-                      className="flex-i py-2 hover:text-primary transition-colors"
+                      className="flex-i py-2 px-3 hover:text-primary transition-colors"
                     >
                       {theme === "dark" ? (
                         <>

@@ -21,10 +21,11 @@ export default function Hero() {
               alt="Profile"
               width={100}
               height={100}
+              priority
               className="rounded-full mb-4 w-32 h-32 object-cover ring-5 ring-black"
             />
           </motion.div>
-          <motion.h1
+          <motion.div
             className="text-page-heading md:text-6xl font-bold mb-6"
             {...fadeInUp}
             transition={{ delay: 0.3 }}
@@ -37,7 +38,7 @@ export default function Hero() {
             >
               Ricky Patel
             </motion.span>
-          </motion.h1>
+          </motion.div>
           <motion.p
             className="text-subheading text-gray-600 dark:text-gray-300 mb-8"
             {...fadeInUp}
@@ -97,7 +98,7 @@ export default function Hero() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/contact"
-                className="text-subheading inline-block w-full bg-gray-200 hover:bg-gray-300 dark:text-black md:w-auto text-gray-800 px-8 py-3 rounded-lg  dark:hover:bg-gray-300 transition-colors"
+                className="text-subheading inline-block w-full bg-gray-100 hover:bg-gray-300 dark:text-black md:w-auto text-gray-800 px-8 py-3 rounded-lg  dark:hover:bg-gray-300 transition-colors"
               >
                 Contact Me
               </Link>

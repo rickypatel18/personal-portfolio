@@ -8,7 +8,7 @@ import { fadeInUp, staggerContainer, cardHoverSmall } from "../utils/animation";
 
 export default function Blogs() {
   return (
-    <section className="py-20 px-4  2xl:px-0 bg-gray-900 ">
+    <section className="py-20 px-4  2xl:px-0 bg-white dark:bg-black ">
       <div className="container max-w-7xl mx-auto px-0 md:px-0 xl:px-4 2xl:px-0 ">
         <motion.h2
           className="text-3xl-l font-bold mb-12 text-center"
@@ -18,7 +18,7 @@ export default function Blogs() {
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
           variants={staggerContainer}
           initial="initial"
           animate="animate"
@@ -26,7 +26,7 @@ export default function Blogs() {
           {blogs.map((blog) => (
             <motion.article
               key={blog.slug}
-              className="bg-gray-100 dark:bg-dark/50 rounded-lg shadow-md p-6"
+              className="bg-gray-100 dark:bg-gray-950 rounded-lg shadow-md p-6"
               variants={fadeInUp}
               {...cardHoverSmall}
             >
@@ -53,17 +53,11 @@ export default function Blogs() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <motion.span
-                  className="flex-i"
-                  whileHover={{ scale: 1.05 }}
-                >
+                <motion.span className="flex-i" whileHover={{ scale: 1.05 }}>
                   <FaCalendarAlt className="mr-2" />
                   {new Date(blog.date).toLocaleDateString()}
                 </motion.span>
-                <motion.span
-                  className="flex-i"
-                  whileHover={{ scale: 1.05 }}
-                >
+                <motion.span className="flex-i" whileHover={{ scale: 1.05 }}>
                   <FaClock className="mr-2" />
                   {blog.readTime}
                 </motion.span>
