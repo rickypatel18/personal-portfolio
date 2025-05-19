@@ -3,8 +3,8 @@ import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100/50 dark:bg-dark/50  dark:border-gray-800 px-0 border sm:border-red-600 md:border-yellow-400 lg:border-pink-700 xl:border-blue-700 2xl:border-black">
-      <div className="container max-w-7xl mx-auto px-0 md:px-4 py-8 ">
+    <footer className="bg-gray-100 dark:bg-dark/50  dark:border-gray-800 px-0 ">
+      <div className="container max-w-7xl mx-auto px-0 md:px-4 xl:px-4 2xl:px-0 py-8 ">
         <div className=" flex-col md:flex-row flex-i justify-between ">
           <div className="mb-4 md:mb-0">
             <Link href="/" className="text-xl font-bold text-primary">

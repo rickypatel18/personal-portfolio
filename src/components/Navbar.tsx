@@ -67,10 +67,10 @@ export default function Navbar() {
       variants={navbarVariants}
       initial="visible"
       animate={isVisible ? "visible" : "hidden"}
-      transition={{ duration: 0.6, ease: "anticipate" }}
+      transition={{ duration: 0.7, ease: "backIn" }}
     >
       <div className="w-full xl:container mx-auto px-4 sm:px-4 md:px-4">
-        <div className="rounded-xl max-w-7xl mx-auto backdrop-blur-xs bg-gray-300/60 dark:bg-slate-800/60 shadow-md my-3 m-0">
+        <div className="rounded-lg max-w-7xl mx-auto backdrop-blur-md bg-gray-100 dark:bg-slate-800/60 shadow-xs my-3 m-0">
           <div className="flex items-center justify-between h-16 px-4">
             <Link href="/" className="text-2xl font-bold text-primary">
               Devfolio™
@@ -87,8 +87,10 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors ${
-                      isActive ? "font-semibold text-primary" : ""
+                    className={`text-md transition-colors hover:text-primary dark:hover:text-primary ${
+                      isActive
+                        ? "font-semibold text-primary"
+                        : "text-gray-700 dark:text-gray-300"
                     }`}
                   >
                     {item.label}

@@ -5,6 +5,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollContext from "./scroll-context/ScrollContext";
+import FooterNew from "@/components/FooterNew";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
           <Navbar />
           <main className="min-h-screen pt-24">{children}</main>
           <Footer />
+          <FooterNew/>
           </ScrollContext>
         </ThemeProvider>
       </body>
