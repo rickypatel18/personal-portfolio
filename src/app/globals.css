@@ -11,10 +11,17 @@
   --animation-fade-in: fadeIn 0.5s ease-in-out;
   --animation-slide-up: slideUp 0.5s ease-in-out;
 }
-body{
-    /* background-image: var(--bg-image);
+/* body{
+    background-image: var(--bg-image);
     background-size: cover;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat; 
+} */
+
+.text-primary{
+  color: var(--color-primary);
+}
+.bg-primary{
+  background-color: var(--color-primary);
 }
 :root {
   --bg-image: url('/bg.jpg');

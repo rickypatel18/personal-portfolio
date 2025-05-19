@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Delius } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollContext from "./scroll-context/ScrollContext";
-import FooterNew from "@/components/FooterNew";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  variable: "--font-roboto-flex",
   subsets: ["latin"],
+  // Roboto Flex supports variable fonts, so we don't need to specify weight
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const delius = Delius({
+  variable: "--font-delius",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -32,14 +34,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-white transition-colors dark:bg-gray-900 dark:text-white ${geistSans.variable} ${geistMono.variable}`}
+        className={`bg-white transition-colors dark:bg-black dark:text-white ${roboto.variable} ${delius.variable}`}
       >
         <ThemeProvider>
           <ScrollContext>
-          <Navbar />
-          <main className="min-h-screen pt-24">{children}</main>
-          <Footer />
-          <FooterNew/>
+            <Navbar />
+            <main className="min-h-screen pt-24">{children}</main>
+            <Footer />
+            <ScrollToTopButton /> 
           </ScrollContext>
         </ThemeProvider>
       </body>

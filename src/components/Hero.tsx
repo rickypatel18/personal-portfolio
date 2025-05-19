@@ -117,13 +117,14 @@ export default function Hero() {
               whileTap={{ scale: 0.9 }}
             >
               <Image
-                src="/profile.png"
+                src="/profile.jpg"
                 alt="Profile"
-                width={20}
-                height={20}
-                className="rounded-full object-cover shadow-2xl border-4 border-white/10"
-                style={{width:"100%", height:"100%"}}
+                width={100}
+                height={100}
+                priority
+                className="rounded-full mb-4 w-32 h-32 object-cover ring-5 ring-black"
               />
+
               <motion.div
                 className="absolute inset-0 bg-green-300/50 shadow-lg rounded-full -z-10"
                 animate={{

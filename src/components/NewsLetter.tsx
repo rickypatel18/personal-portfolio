@@ -1,7 +1,7 @@
 export default function Newsletter() {
   return (
-    <section className="px-0 pt-5 bg-gray-100 dark:bg-dark/50 ">
-      <div className=" overflow-hidden animate-slide-up px-4 ">
+    <section className="px-0">
+      <div className="bg-white dark:bg-black shadow-md overflow-hidden animate-slide-up px-4 ">
         <div className=" ">
           <div className="max-w-7xl mx-auto  px-0 xl:px-4 2xl:px-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -18,7 +18,7 @@ export default function Newsletter() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-lg border dark:text-white border-gray-300 dark:border-gray-600 bg-white text-gray-500 dark:bg-dark focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="flex-1 px-4   dark:text-white border-gray-300  text-gray-500  w-full  py-2 rounded-md border  dark:border-gray-900 bg-white dark:bg-gray-900 focus:outline-none focus:border-primary"
                   required
                 />
                 <button

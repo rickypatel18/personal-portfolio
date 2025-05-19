@@ -1,234 +1,93 @@
 "use client";
 
-import { useState } from "react";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
-import {
-  fadeInUp,
-  fadeIn,
-  slideInLeft,
-  slideInRight,
-} from "../../utils/animation";
+import Link from "next/link";
+import { motion, useAnimation } from "framer-motion";
+import ContactForm from "./ContactForm";
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+const Contact = () => {
+  const email = "patelricky184@gmail.com";
+  const controls = useAnimation();
 
-type FormStatus = "idle" | "loading" | "success" | "error";
-
-export default function Contact() {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [status, setStatus] = useState<FormStatus>("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) throw new Error("Failed to send message");
-
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-    } catch {
-      setStatus("error");
-    }
+  const barVariants = {
+    initial: { scaleY: 0 },
+    hover: {
+      scaleY: 1,
+      transition: { duration: 1, ease: [0.6, 0.01, -0.05, 0.95] },
+    },
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+  const textVariants = {
+    initial: { y: 20, opacity: 0 },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 },
+    },
   };
 
+  const backgroundText = "Connect";
+  const repeatedText = Array(1).fill(backgroundText).join("");
   return (
-    <div className="container max-w-7xl mx-auto py-12 px-0">
-      <motion.h1
-        className="text-page-heading font-bold mb-8 text-center"
-        {...fadeInUp}
-      >
-        Contact Me
-      </motion.h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Contact Information */}
-        <motion.div className="space-y-8" {...slideInLeft}>
-          <motion.div {...fadeInUp}>
-            <h2 className="text-subheading font-semibold mb-4">Get in Touch</h2>
-            <p className="text-secondary">
-              I&apos;m always open to discussing new projects, creative ideas,
-              or opportunities to be part of your visions.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="space-y-4"
-            variants={fadeIn}
-            initial="initial"
-            animate="animate"
-          >
-            <motion.div
-              className="flex-i gap-4"
-              variants={fadeInUp}
-              whileHover={{ x: 10 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <FaEnvelope className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Email</h3>
-                <a
-                  href="mailto:your.email@example.com"
-                  className="text-secondary hover:text-primary"
-                >
-                  patelricky184@gmail.com
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex-i gap-4"
-              variants={fadeInUp}
-              whileHover={{ x: 10 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <FaPhone className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Phone</h3>
-                <a
-                  href="tel:+1234567890"
-                  className="text-secondary hover:text-primary"
-                >
-                  +91 8866467330
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex-i gap-4"
-              variants={fadeInUp}
-              whileHover={{ x: 10 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <FaMapMarkerAlt className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Location</h3>
-                <p className="text-secondary">Undach, Bilimora</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-
-        {/* Contact Form */}
+    <div className=" relative bg-white dark:bg-black text-black dark:text-white py-20 md:py-32 overflow-hidden mx-4">
+      <div className="container mx-auto flex flex-col gap-6 px-6 text-center relative z-10 ">
         <motion.div
-          className="bg-gray-100 dark:bg-dark/50 p-6 rounded-lg shadow-md"
-          {...slideInRight}
+          initial="initial"
+          animate="animate"
+          variants={textVariants}
+          className=" text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-tighter break-all"
         >
-          <motion.form
-            onSubmit={handleSubmit}
-            className="space-y-6"
-            variants={fadeIn}
-            initial="initial"
-            animate="animate"
-          >
-            <motion.div variants={fadeInUp}>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name "
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:outline-none focus:border-primary"
-              />
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email "
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:outline-none focus:border-primary"
-              />
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium mb-2"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Enter your message "
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:outline-none focus:border-primary"
-              />
-            </motion.div>
-
-            <motion.button
-              type="submit"
-              disabled={status === "loading"}
-              className="w-full btn btn-primary card-title inline-block"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {status === "loading" ? "Sending..." : "Send Message"}
-            </motion.button>
-
-            {status === "success" && (
-              <motion.p
-                className="text-green-500 text-center"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                Message sent successfully!
-              </motion.p>
-            )}
-
-            {status === "error" && (
-              <motion.p
-                className="text-red-500 text-center"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                Failed to send message. Please try again.
-              </motion.p>
-            )}
-          </motion.form>
+          Get in Touch
         </motion.div>
+
+        <motion.div
+          className="relative inline-block group "
+          initial="initial"
+          whileHover="hover"
+        >
+          <Link
+            href={`mailto:${email.toLowerCase()}`}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter break-all relative z-10"
+            aria-label={`Email ${email}`}
+          >
+            <>
+              {email.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial="initial"
+                  animate="animate"
+                  variants={textVariants}
+                  className="inline-block "
+                >
+                  {char}
+                </motion.span>
+              ))}
+
+              <motion.div
+                className="absolute top-2 md:top-3 lg:top-4 xl:top-6 left-0 right-0 w-full h-[85%] md:h-[70%] bg-primary mix-blend-hard-light"
+                style={{ transformOrigin: "bottom" }}
+                variants={barVariants}
+                aria-hidden="true"
+              />
+            </>
+          </Link>
+        </motion.div>
+      </div>
+
+      {/* Animated background text */}
+      <div className="absolute inset-0 flex items-center justify-center text-gray-500 select-none z-0 overflow-hidden ">
+        <motion.span
+          className="text-[10vh] md:text-[20vh] lg:text-[25vh] xl:text-[30vh] 2xl:text-[40vh] font-black  leading-none tracking-tighter opacity-5 pointer-events-none whitespace-nowrap"
+          animate={controls}
+          initial={{ x: "0%" }}
+        >
+          {repeatedText}
+        </motion.span>
+      </div>
+      <div className="relative z-20 mt-10">
+        <ContactForm />
       </div>
     </div>
   );
-}
+};
+
+export default Contact;

@@ -40,12 +40,12 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-gray-100  dark:bg-dark/50 rounded-lg shadow-md overflow-hidden"
+            className="bg-gray-100  dark:bg-gray-950 rounded-lg shadow-lg overflow-hidden"
             variants={fadeInUp}
             {...cardHoverSmall}
           >
             <motion.div
-              className="aspect-video bg-gray-200 dark:bg-gray-800 px-2 py-1"
+              className="aspect-video bg-gray-200 dark:bg-gray-950 px-2 py-1"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
