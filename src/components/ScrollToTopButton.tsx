@@ -47,7 +47,7 @@ const ScrollToTopButton = () => {
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
-                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    transition={{ duration: 0.5, ease: "anticipate" }}
                     aria-label="Scroll to top"
                     title="Scroll to top"
                 >
