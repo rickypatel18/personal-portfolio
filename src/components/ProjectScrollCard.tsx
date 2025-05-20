@@ -64,7 +64,7 @@ const ProjectScrollCard = () => {
         ))}
         <Link
           href="/projects"
-          className="relative overflow-hidden w-fit h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-lg bg-white hover:bg-gray-300/90  text-black shadow-2xl hover:shadow-secondary transition-all"
+          className="relative overflow-hidden w-fit h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-lg bg-white hover:bg-gray-300/90 animate-bounce text-black shadow-2xl hover:shadow-secondary transition-all"
         >
           Project Details here
         </Link>

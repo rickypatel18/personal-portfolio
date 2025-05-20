@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Matter from "matter-js";
 import { fadeInUp } from "@/utils/animation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type FallingTextProps = {
   text: string;
@@ -58,7 +59,7 @@ FallingTextProps) => {
         return `<span
       class="inline-block mx-[2px] select-none  ${
         isHighlighted
-          ? "btn-gradDark  font-bold  py-0 lg:py-1 px-2 lg:px-5"
+          ? "btn-gradDark  font-bold py-0 lg:py-1 px-2 lg:px-5"
           : " btn-grad py-0 lg:py-1 px-2 lg:px-5 "
       }"
     >
@@ -256,7 +257,7 @@ FallingTextProps) => {
           </motion.h2>
           <div
             ref={containerRef}
-            className="relative text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl 3xl:text-3xl z-[1] container h-[200px] sm:h-[250px] md:h-[250px] lg:h-[300px] xl:h-[350px] 3xl:h-[400px]  cursor-pointer text-center py-8 overflow-hidden  max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0  border-b-primary border-l-primary border-r-primary border-t-0 rounded-xl shadow-[0px_-23px_25px_0px_rgba(16,185,129,0.17)_inset,0px_-36px_30px_0px_rgba(16,185,129,0.15)_inset,0px_-79px_40px_0px_rgba(16,185,129,0.1)_inset,0px_2px_1px_rgba(34,197,94,0.06),0px_4px_2px_rgba(34,197,94,0.09),0px_8px_4px_rgba(34,197,94,0.09),0px_16px_8px_rgba(34,197,94,0.09),0px_32px_16px_rgba(34,197,94,0.09)]"
+            className="relative text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl 3xl:text-3xl z-[1] container h-[200px] sm:h-[250px] md:h-[250px] lg:h-[300px] xl:h-[350px] 3xl:h-[400px]  cursor-pointer text-center py-8 overflow-hidden  max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0  border-b-primary border-l-primary border-r-primary border-t-0 rounded-xl shadow-[0px_-23px_25px_0px_rgba(16,185,129,0.17)_inset,0px_-36px_30px_0px_rgba(16,185,129,0.15)_inset,0px_-79px_40px_0px_rgba(16,185,129,0.1)_inset,0px_2px_1px_rgba(34,197,94,0.06),0px_4px_2px_rgba(34,197,94,0.09),0px_8px_4px_rgba(34,197,94,0.09),0px_16px_8px_rgba(34,197,94,0.09),0px_32px_16px_rgba(34,197,94,0.09)] animate-pulse"
             onClick={trigger === "click" ? handleTrigger : undefined}
             onMouseOver={trigger === "hover" ? handleTrigger : undefined}
           >
@@ -276,6 +277,17 @@ FallingTextProps) => {
               className="absolute top-0 left-0 z-0 "
               ref={canvasContainerRef}
             />
+          </div>
+          <div className="mt-5">
+            <Link
+              href="/about"
+              className=" animate-bounce"
+             
+            >
+              <p className="relative overflow-hidden w-fit h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-lg bg-white hover:bg-gray-300/90 animate-bounce text-black shadow-2xl hover:shadow-secondary transition-all">
+                More about me
+              </p>
+            </Link>
           </div>
         </div>
       </div>
