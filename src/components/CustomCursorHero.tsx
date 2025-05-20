@@ -36,7 +36,7 @@ export default function CustomCursorHero({ name, children }: Props) {
     }
 
     return () => {
-      body.classList.remove('cursor-none'); // Ensure clean up on unmount
+      body.classList.remove('cursor-none');
     };
   }, [visible]);
 

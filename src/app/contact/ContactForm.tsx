@@ -185,7 +185,7 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={4}
+                rows={3}
                 className=" w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-900 bg-white dark:bg-gray-900 focus:outline-none focus:border-primary"
               />
             </motion.div>

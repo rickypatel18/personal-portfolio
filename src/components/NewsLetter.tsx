@@ -1,16 +1,15 @@
 export default function Newsletter() {
   return (
-    <section className="px-0">
+    <section className="px-0 ">
       <div className="bg-white dark:bg-black shadow-md overflow-hidden animate-slide-up px-4 ">
-        <div className=" ">
-          <div className="max-w-7xl mx-auto  px-0 xl:px-4 2xl:px-0">
+          <div className="max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl font-bold mb-4">
+                <h2 className="text-2xl font-bold mb-3">
                   Subscribe to My Newsletter
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Get the latest updates on my projects, blog posts, and tech
+                  Get the latest updates on my projects and tech
                   insights delivered straight to your inbox.
                 </p>
               </div>
@@ -30,7 +29,6 @@ export default function Newsletter() {
               </form>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );

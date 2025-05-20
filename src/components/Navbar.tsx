@@ -58,7 +58,7 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const navbarVariants = {
-    hidden: { y: "-200%", opacity: 1 },
+    hidden: { y: "-100%", opacity: 1 },
     visible: { y: "0%", opacity: 1 },
   };
 
@@ -68,7 +68,7 @@ export default function Navbar() {
       variants={navbarVariants}
       initial="visible"
       animate={isVisible ? "visible" : "hidden"}
-      transition={{ duration: 0.7, ease: "backIn" }}
+      transition={{ duration: 0.9, ease: "backIn" }}
     >
       <div className="w-full xl:container mx-auto px-4 sm:px-4 md:px-4">
         <div className="rounded-xl max-w-7xl mx-auto backdrop-blur-xs bg-gray-300/30 dark:bg-slate-800/60  my-3 m-0">

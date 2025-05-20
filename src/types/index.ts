@@ -1,4 +1,6 @@
 export interface Project {
+  key:string,
+  bgColor:string,
   title: string;
   description: string;
   technologies: string[];

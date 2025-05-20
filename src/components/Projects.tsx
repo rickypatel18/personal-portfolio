@@ -73,7 +73,7 @@ export default function Projects() {
                 ))}
               </motion.div>
               <motion.div
-                className="flex gap-4"
+                className="flex gap-4 "
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
@@ -82,7 +82,7 @@ export default function Projects() {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-i gap-2 text-secondary hover:text-primary transition-colors card-description"
+                  className="flex-i gap-2 text-secondary hover:text-ternary transition-colors card-description"
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -93,7 +93,7 @@ export default function Projects() {
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card-description flex-i gap-2 text-secondary hover:text-primary transition-colors"
+                  className="card-description flex-i gap-2 text-secondary hover:text-ternary transition-colors"
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaPhoneSquare } from "react-icons/fa";
+import { FaGithubSquare, FaLinkedin, FaPhoneSquare } from "react-icons/fa";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import { useRef, MouseEvent, useEffect } from "react";
@@ -44,7 +44,7 @@ export default function Hero() {
       if (!particlesRef.current) return;
 
       const particle = document.createElement("div");
-      particle.className = "absolute w-2 h-2 bg-primary rounded-full";
+      particle.className = "absolute w-2 h-2 bg-ternary rounded-full";
       particle.style.left = `${e.clientX}px`;
       particle.style.top = `${e.clientY}px`;
 
@@ -78,22 +78,22 @@ export default function Hero() {
   }
 
   return (
-    <CustomCursorHero name="Ricky Patel">
-      <section className="py-15 pb-0  px-4 md:px-0 relative overflow-hidden max-h-screen flex items-center">
+    <CustomCursorHero name="Hero Section">
+      <section className="py-15 relative px-4 xl:px-6 overflow-hidden w-full max-h-screen flex items-center justify-center">
         {/* Advanced Particle System */}
         <div
           ref={particlesRef}
-          className="absolute inset-0 overflow-hidden pointer-events-none"
+          className="overflow-hidden pointer-events-none"
         />
 
-        {/* Animated Glow Effect */}
+        {/* Animated Glow Effect
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-purple-500/30 pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-purple-500/30 pointer-events-none rounded-lg "
           animate={{ opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 4, repeat: Infinity }}
-        />
+        /> */}
 
-        <div className="container max-w-7xl mx-auto px-0 relative z-10  pb-15 ">
+        <div className="container max-w-7xl mx-auto px-0 relative z-10 pb-15">
           <motion.div
             className="max-w-3xl mx-auto text-center"
             variants={container}
@@ -122,13 +122,13 @@ export default function Hero() {
                 width={100}
                 height={100}
                 priority
-                className="rounded-full mb-4 w-32 h-32 object-cover ring-5 ring-black"
+                className="rounded-full mb-4 w-32 h-32 object-cover"
               />
 
               <motion.div
-                className="absolute inset-0 bg-green-300/50 shadow-lg rounded-full -z-10"
+                className="absolute inset-0 bg-primary/30 shadow-lg rounded-full -z-10"
                 animate={{
-                  x: [0, 30, -20, 0],
+                  x: [0, 20, -20, 0],
                   y: [0, -15, 15, 0],
                 }}
                 transition={{
@@ -144,18 +144,13 @@ export default function Hero() {
               className="text-4xl md:text-6xl font-bold mb-6"
               variants={item}
             >
-              <div className="flex justify-center flex-wrap [text-shadow:0_0_15px_rgba(34,211,238,0.5)]">
+              <div className="flex justify-center flex-wrap ">
                 {"Hi, I'm ".split("").map((char, i) => (
                   <motion.span
                     key={i}
-                    className="inline-block hover:text-cyan-400 transition-colors text-5xl"
+                    className="inline-block hover:text-ternary transition-colors text-4xl lg:text-5xl"
                     animate={{
                       y: [-5, 5, -5],
-                      textShadow: [
-                        "0 0 10px rgba(34,211,238,0)",
-                        "0 0 10px rgba(34,211,238,0.5)",
-                        "0 0 10px rgba(34,211,238,0)",
-                      ],
                     }}
                     transition={{
                       duration: 3 + i,
@@ -167,44 +162,58 @@ export default function Hero() {
                   </motion.span>
                 ))}
                 <ReactTyped
-                  strings={["Ricky Patel", "Web Alchemist", "UI Sorcerer"]}
-                  typeSpeed={100}
-                  backSpeed={50}
+                  strings={[
+                    "Ricky Patel",
+                    "Web Developer",
+                    "Frontend Sorcerer",
+                  ]}
+                  typeSpeed={150}
+                  backSpeed={100}
                   loop
-                  className="ml-2 text-5xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
+                  className="ml-2 text-4xl lg:text-5xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"
                 />
               </div>
             </motion.div>
 
             {/* DNA Strand Subheading */}
             <motion.div
-              className="text-xl text-gray-600 dark:text-gray-300 mb-8 relative"
+              className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 relative"
               variants={item}
             >
               <span className="relative z-10 px-4 bg-background">
                 Crafting digital experiences with React & Next.js
               </span>
               <motion.div
-                className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
+                className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent"
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
             </motion.div>
+
+            <div className="mb-8">
+              <p>
+                I&apos;m a software engineer specialized in frontend development
+                for scalable web apps. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Mollitia maiores voluptatibus ipsum tenetur
+                magni blanditiis quis fugit, voluptates porro libero nisi
+                eligendi quas, vitae unde. At assumenda cupiditate neque quis.
+              </p>
+            </div>
 
             {/* Quantum Social Links */}
             <motion.div
               className="flex justify-center space-x-6 mb-8"
               variants={item}
             >
-              {[FaGithub, FaLinkedin, FaPhoneSquare].map((Icon, i) => (
+              {[FaGithubSquare, FaLinkedin, FaPhoneSquare].map((Icon, i) => (
                 <motion.a
                   key={i}
                   href="#"
-                  className="relative text-3xl p-2 rounded-full bg-white/5 backdrop-blur-sm hover:shadow-2xl hover:shadow-cyan-400/20 transition-all"
+                  className="relative text-3xl p-2 rounded-full bg-white/5 backdrop-blur-sm "
                   whileHover={{
                     scale: 1.2,
                     rotate: [0, -15, 15, 0],
-                    background: "linear-gradient(45deg, #00FFFF, #FF00FF)",
+                    background: "linear-gradient(45deg, #ff4500, #28e98c)",
                   }}
                   whileTap={{ scale: 0.9 }}
                   transition={{
@@ -214,13 +223,13 @@ export default function Hero() {
                 >
                   <Icon className="text-current w-5 h-5" />
                   <motion.div
-                    className="absolute inset-0 rounded-full border-2 border-cyan-400/30 opacity-0"
+                    className="absolute inset-0 rounded-full border-2 border-ternary/30 opacity-0"
                     animate={{
                       opacity: [0, 1, 0],
                       scale: [1, 1.5],
                     }}
                     transition={{
-                      duration: 2,
+                      duration: 3,
                       repeat: Infinity,
                       delay: i * 0.3,
                     }}
@@ -233,10 +242,10 @@ export default function Hero() {
             <motion.div className="flex justify-center gap-6" variants={item}>
               <Link
                 href="/projects"
-                className="relative overflow-hidden h-12 flex justify-center items-center px-8 py-4 rounded-full bg-primary/90 hover:bg-primary text-white shadow-2xl hover:shadow-cyan-400/30 transition-all"
+                className="relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-primary/90 hover:bg-primary text-white shadow-2xl hover:shadow-primary/30 transition-all"
               >
-                <span className="relative z-10">View Projects</span>
-                <motion.div className="absolute inset-0 bg-gradient-to-r from-cyan-400/30 to-purple-400/30 opacity-0 hover:opacity-100 transition-opacity" />
+                <span className="z-10 text-sm lg:text-lg">View Projects</span>
+                <motion.div className="absolute inset-0 bg-green-400 opacity-0 hover:opacity-100 transition-opacity " />
                 <motion.div
                   className="absolute top-[1px] h-[1px] left-0 w-full  bg-gradient-to-r from-transparent via-white to-transparent"
                   animate={{ x: ["-100%", "100%"] }}
@@ -246,17 +255,18 @@ export default function Hero() {
 
               <Link
                 href="/resume"
-                className="relative overflow-hidden h-12 flex justify-center items-center px-8 py-2 rounded-full bg-gray-200/90 dark:bg-white/10 hover:bg-gray-300/90 dark:hover:bg-white/20 text-gray-800 dark:text-white shadow-2xl hover:shadow-cyan-400/20 transition-all"
+                className="relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-gray-200/90 dark:bg-gray-100/10 hover:bg-gray-300/90 dark:hover:bg-white/20 text-gray-800 dark:text-white shadow-2xl hover:shadow-secondary/30 transition-all"
               >
-                <span className=" z-10">View Resume</span>
-                <motion.div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-purple-400/10 opacity-0 hover:opacity-100 transition-opacity" />
+                <span className="z-10 text-sm lg:text-lg">View Resume</span>
+                <motion.div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity" />
                 <motion.div
-                  className="absolute bottom-[1px] h-[1px] left-0 w-full  bg-gradient-to-r from-transparent via-white to-transparent"
+                  className="absolute bottom-[1px] h-[1px] left-0 w-full bg-gradient-to-r from-transparent via-white to-transparent"
                   animate={{ x: ["100%", "-100%"] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 2 }}
                 />
               </Link>
             </motion.div>
+
           </motion.div>
         </div>
       </section>

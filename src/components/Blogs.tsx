@@ -8,7 +8,7 @@ import { fadeInUp, staggerContainer, cardHoverSmall } from "../utils/animation";
 
 export default function Blogs() {
   return (
-    <section className="py-20 px-4  2xl:px-0 bg-white dark:bg-black ">
+    <section className="py-20 px-4 2xl:px-0 bg-white dark:bg-black ">
       <div className="container max-w-7xl mx-auto px-0 md:px-0 xl:px-4 2xl:px-0 ">
         <motion.h2
           className="text-3xl-l font-bold mb-12 text-center"
