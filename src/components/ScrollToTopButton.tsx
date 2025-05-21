@@ -53,9 +53,9 @@ const ScrollToTopButton = () => {
         >
           {/* <ArrowUpIcon className="h-6 w-6"/> */}
           <Image
-            src="/greenA.png"
+            src="/greenArrow.png"
             alt="up arrow"
-            className="h-5 w-5"
+            className=" h-7 w-7 lg:h-9 lg:w-9"
             height={20}
             width={20}
           ></Image>
