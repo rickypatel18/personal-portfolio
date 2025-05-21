@@ -3,13 +3,38 @@
 import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { FaGithubSquare, FaLinkedin, FaPhoneSquare } from "react-icons/fa";
 import { fadeInUp } from "@/utils/animation";
 
 const Footer = () => {
   const pathName = usePathname();
   const controls = useAnimation();
+  const [isInside, setIsInside] = useState(false);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const footerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const moveCursor = (e: MouseEvent) => {
+      if (footerRef.current && footerRef.current.contains(e.target as Node)) {
+        setCursorPos({ x: e.clientX, y: e.clientY });
+        setIsInside(true);
+      } else {
+        setIsInside(false);
+      }
+    };
+    window.addEventListener("mousemove", moveCursor);
+    return () => window.removeEventListener("mousemove", moveCursor);
+  }, []);
+
+  const animations = [
+    { whileHover: { rotate: -5, scale: 1.2 } },
+    { whileHover: { skewX: 10, scale: 1.1 } },
+    { whileHover: { scale: 1.3, y: -5 } },
+    { whileHover: { rotate: 5, scale: 1.1 } },
+    { whileHover: { skewY: 8, scale: 1.15 } },
+    { whileHover: { scale: 1.25, rotate: -3 } },
+  ];
 
   // Infinite scroll animation
   useEffect(() => {
@@ -63,8 +88,7 @@ const Footer = () => {
           window.open(redirectUrl, "_blank");
         }
       }
-    } catch (err) {
-      console.error("Failed to copy: ", err);
+    } catch {
       if (redirectUrl) {
         if (redirectUrl.startsWith("mailto:")) {
           window.location.href = redirectUrl;
@@ -76,12 +100,24 @@ const Footer = () => {
   };
 
   return (
-    <footer className=" relative bg-white dark:bg-black text-white py-10 overflow-hidden px-0 ">
-      <div className="px-4">
-        <div className="max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0 ">
-          <div className="flex flex-col gap-10 text-center relative z-10 ">
+    <footer
+      ref={footerRef}
+      className="relative bg-white text-black dark:bg-black dark:text-white my-0 overflow-hidden px-0 cursor-none "
+    >
+      <div className="px-4 ">
+        <div className="max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0  ">
+          
+          {isInside && (
+            <motion.div
+              className="fixed top-0 left-0 w-5 h-5 bg-black/30 dark:bg-white/10 backdrop-blur-2xl rounded-full pointer-events-none z-50 cursor-none"
+              animate={{ x: cursorPos.x - 15, y: cursorPos.y - 15 }}
+              transition={{ type: "spring", stiffness: 300, damping: 50 }}
+            />
+          )}
+
+          <div className="flex flex-col gap-10 text-center relative z-10">
             <motion.p
-              className="text-sm md:text-base text-gray-400 "
+              className="text-sm md:text-base font-bold text-gray-400"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -90,36 +126,36 @@ const Footer = () => {
               Want to work together?
             </motion.p>
 
-            <motion.div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 ">
-              <div className="flex flex-col justify-start items-start gap-5">
+            <motion.div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10">
+              <div className="flex flex-col justify-start items-start gap-2 lg:gap-5">
                 <h3 className=" text-xl text-primary">Location</h3>
-                <span className="flex flex-col justify-start items-start font-mono text-xl md:text-2xl lg:text-3xl font-thin text-start">
+                <span className="flex flex-col justify-start items-start font-mono text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold text-start">
                   <motion.p
-                    className=" text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 1 }}
+                    className=" text-gray-600 dark:text-gray-300 transition-colors"
+                    {...animations[1 % animations.length]}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     Undach, Antaliya
                   </motion.p>
                   <motion.p
-                    className=" text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 1 }}
+                    className=" text-gray-600 dark:text-gray-300 transition-colors"
+                    {...animations[1 % animations.length]}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    Bilimora{" "}
+                    Bilimora
                   </motion.p>
                 </span>
               </div>
-              <div className="flex flex-col justify-start items-start gap-5">
+              <div className="flex flex-col justify-start items-start gap-2 lg:gap-5">
                 <h3 className=" text-xl text-primary">Profiles </h3>
-                <span className="flex flex-col justify-start items-start  font-mono text-xl md:text-2xl lg:text-3xl font-thin  text-start">
+                <span className="flex flex-col justify-start items-start  font-mono text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold text-start">
                   <motion.a
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className=" text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 1 }}
+                    className=" text-gray-600  dark:text-gray-300  transition-colors"
+                    {...animations[1 % animations.length]}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     GitHub
                   </motion.a>
@@ -127,26 +163,26 @@ const Footer = () => {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className=" text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 1 }}
+                    className=" text-gray-600  dark:text-gray-300  transition-colors"
+                    {...animations[1 % animations.length]}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     LinkedIn
                   </motion.a>
                 </span>
               </div>
-              <div className="flex flex-col justify-start items-start  gap-5">
+              <div className="flex flex-col justify-start items-start gap-2 lg:gap-5">
                 <h3 className=" text-xl text-primary">Contact</h3>
-                <span className="flex flex-col justify-start items-start font-mono text-xl md:text-2xl lg:text-3xl font-thin">
+                <span className="flex flex-col justify-start items-start font-mono text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold">
                   <motion.a
                     href={`mailto:${email}`}
                     onClick={(e) => {
                       e.preventDefault();
                       copyToClipboard(email, "email", `mailto:${email}`);
                     }}
-                    className="relative text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors cursor-pointer"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
+                    className="relative text-gray-600 dark:text-gray-300 transition-colors cursor-pointer"
+                    {...animations[1 % animations.length]}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     {email}
                     {copiedItem === "email" && (
@@ -166,9 +202,9 @@ const Footer = () => {
                         `https://wa.me/${phoneNumber.replace(/\D/g, "")}` // 3. Redirect URL (optional)
                       );
                     }}
-                    className="relative text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors cursor-pointer"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
+                    className="relative text-gray-600  dark:text-gray-300  transition-colors cursor-pointer"
+                    {...animations[1 % animations.length]}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     {phoneNumber}
                     {copiedItem === "phone" && ( // This condition will now work
@@ -195,37 +231,6 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              {/* <motion.a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaGithub />
-          </motion.a>
-          <motion.a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaLinkedin />
-          </motion.a>
-          <motion.a
-            href={`tel:${phoneNumber}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaPhoneSquare />
-          </motion.a> */}
-
               {[FaGithubSquare, FaLinkedin, FaPhoneSquare].map((Icon, i) => (
                 <motion.a
                   key={i}
@@ -289,7 +294,7 @@ const Footer = () => {
             </motion.div>
 
             <div className="text-xs md:text-sm text-gray-600 z-10">
-              © {new Date().getFullYear()} YourName/YourCompany. All rights
+              © {new Date().getFullYear()} Ricky. All rights
               reserved.
             </div>
           </div>

@@ -1,3 +1,4 @@
+import ClientAnimationWrapper from "@/components/ClientAnimationWrapper";
 import { Metadata } from "next";
 import Link from "next/link";
 // npm install file-loader
@@ -14,11 +15,11 @@ export default function CVPage() {
   return (
     <div className="flex flex-col gap-10 mx-auto px-4 py-10 md:py-16 min-h-screen items-center bg-white dark:bg-black">
       <header className="text-center ">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+        <h1 className="text-page-heading font-bold text-gray-900 dark:text-white">
           My Curriculum Vitae
         </h1>
 
-        <p className="mt-2 text-md text-gray-600 dark:text-gray-400">
+        <p className="mt-2 text-sm lg:text-md text-gray-600 dark:text-gray-400">
           A summary of my professional journey, skills and achievements.
         </p>
       </header>
@@ -26,16 +27,16 @@ export default function CVPage() {
       <Link
         href={CV_PUBLIC_PATH}
         download="Ricky_Patel_CV"
-        className="text-md lg:text-lg w-fit text-white md:w-auto md:px-6 md:py-2 relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-primary/90 hover:bg-primary  shadow-2xl hover:shadow-primary/30 transition-all"
+        className="text-md lg:text-lg w-fit  text-white md:w-auto md:px-6 md:py-2 relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-primary/90 hover:bg-primary  shadow-2xl hover:shadow-primary/30 transition-all"
       >
-        Download CV
+        <ClientAnimationWrapper>Download CV</ClientAnimationWrapper>
       </Link>
 
-      <div className="w-full max-w-4xl max-h-[100vh] h-[100vh] bg-transparent rounded-lg overflow-hidden">
+      <div className="w-full max-w-4xl bg-transparent rounded-lg overflow-hidden">
         <iframe
-          src={`${CV_PUBLIC_PATH}#toolbar=0&navpanes=0&scrollbar=0&view=fitH`} 
+          src={`${CV_PUBLIC_PATH}#toolbar=0&navpanes=0&scrollbar=0&view=fitH`}
           title="Ricky Patel - Frontend Developer CV"
-          className="w-full h-full"
+          className="w-full h-[40vh] sm:h-[80vh] md:h-[100vh]"
           loading="eager"
           aria-label="PDF document viewer"
         >
@@ -60,7 +61,7 @@ export default function CVPage() {
       </div>
 
       <footer className=" text-center">
-        <p className="text-md text-gray-600 dark:text-gray-400 lg:text-md">
+        <p className="text-sm lg:text-md text-gray-600 dark:text-gray-400 lg:text-md">
           Open to new opportunities or collaborations? Feel free to{" "}
           <Link
             href="/contact"

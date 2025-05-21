@@ -58,12 +58,19 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="container max-w-7xl mx-auto py-12 px-0 xl:px-4 ">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div className="container max-w-7xl mx-auto py-12 px-0 xl:px-4">
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-12"
+        initial={{ y: 0 }}
+        animate={{ y: [0, 10, 20, 20, 10, 0] }}
+        transition={{ delay: 0.5, duration: 5 }}
+      >
         {/* Contact Information */}
-        <motion.div className="space-y-8" {...slideInLeft}>
+        <motion.div className="space-y-8 " {...slideInLeft} >
           <motion.div {...fadeInUp}>
-            <h2 className="text-subheading font-semibold mb-4">Get in Touch</h2>
+            <h2 className="text-subheading font-semibold mb-4">
+              Stay Connected
+            </h2>
             <p className="text-secondary">
               I&apos;m always open to discussing new projects, creative ideas,
               or opportunities to be part of your visions.
@@ -129,7 +136,7 @@ export default function ContactForm() {
 
         {/* Contact Form */}
         <motion.div
-          className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
+          className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg  "
           {...slideInRight}
         >
           <motion.form
@@ -185,7 +192,7 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={3}
+                rows={4}
                 className=" w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-900 bg-white dark:bg-gray-900 focus:outline-none focus:border-primary"
               />
             </motion.div>
@@ -221,7 +228,7 @@ export default function ContactForm() {
             )}
           </motion.form>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -79,7 +79,7 @@ export default function Hero() {
 
   return (
     <CustomCursorHero name="Hero Section">
-      <section className="py-15 relative px-4 xl:px-6 overflow-hidden w-full max-h-screen flex items-center justify-center">
+      <section className="p-15 relative px-4 xl:px-6 overflow-hidden w-full max-h-screen flex items-center justify-center">
         {/* Advanced Particle System */}
         <div
           ref={particlesRef}
@@ -191,12 +191,9 @@ export default function Hero() {
             </motion.div>
 
             <div className="mb-8">
-              <p>
+              <p className="text-sm lg:text-lg text-secondary">
                 I&apos;m a software engineer specialized in frontend development
-                for scalable web apps. Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit. Mollitia maiores voluptatibus ipsum tenetur
-                magni blanditiis quis fugit, voluptates porro libero nisi
-                eligendi quas, vitae unde. At assumenda cupiditate neque quis.
+                for scalable web apps. Passionate about crafting responsive, user-friendly web interfaces with React, Next.js, and Tailwind CSS. Skilled in building dynamic UIs, optimizing performance, and collaborating with teams to deliver clean, maintainable code. Experienced in JavaScript/TypeScript, modern frameworks, and RESTful APIs. Eager to learn, solve problems, and contribute to innovative projects.
               </p>
             </div>
 

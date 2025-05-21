@@ -112,7 +112,7 @@ export default function Navbar() {
                 {theme === "dark" ? (
                   <SunIcon className="h-5 w-5 text-yellow-400" />
                 ) : (
-                  <MoonIcon className="h-5 w-5 text-slate-500" />
+                  <MoonIcon className="h-5 w-5 text-gray-700" />
                 )}
               </motion.button>
             </div>
@@ -135,11 +135,11 @@ export default function Navbar() {
                 {theme === "dark" ? (
                   <SunIcon className="h-5 w-5 text-yellow-400" />
                 ) : (
-                  <MoonIcon className="h-5 w-5 text-gray-600" />
+                  <MoonIcon className="h-5 w-5 text-gray-700 dark:text-gray-600" />
                 )}
               </motion.button>
               <motion.button
-                className="p-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
+                className="p-1.5 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
                 onClick={toggleMobileMenu}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

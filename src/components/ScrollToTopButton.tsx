@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,7 +42,7 @@ const ScrollToTopButton = () => {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-10 right-8 z-50 p-3 bg-primary font-black text-white rounded-full shadow-lg hover:bg-primary/90 focus:outline-none transition-colors "
+          className="fixed bottom-10 lg:bottom-20 right-5 lg:right-15 z-50 p-1.5 lg:p-2.5 font-black text-white rounded-full shadow-orange-500 shadow-md dark:shadow-md cursor-pointer"
           variants={buttonVariants}
           initial="hidden"
           animate="visible"
@@ -51,7 +51,14 @@ const ScrollToTopButton = () => {
           aria-label="Scroll to top"
           title="Scroll to top"
         >
-          <ArrowUpIcon className="h-6 w-6"/>
+          {/* <ArrowUpIcon className="h-6 w-6"/> */}
+          <Image
+            src="/greenA.png"
+            alt="up arrow"
+            className="h-5 w-5"
+            height={20}
+            width={20}
+          ></Image>
         </motion.button>
       )}
     </AnimatePresence>

@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
-import Newsletter from "@/components/NewsLetter";
 import FallingText from "@/components/FallingText";
 import ProjectScrollCard from "@/components/ProjectScrollCard";
+// import Newsletter from "@/components/NewsLetter";
 // import Projects from "@/components/Projects";
 // import Blogs from "@/components/Blogs";
 // import AboutMe from "@/components/AboutMe";
@@ -13,15 +13,16 @@ export default function Home() {
       {/* <Projects /> */}
       {/* <Blogs /> */}
       <ProjectScrollCard />
-      <div className="skill-section">
+      <div className="skill-section ">
         <FallingText
-          text={`React Bits is a library of animated and interactive React components designed to streamline UI development and simplify your workflow.`}
+          text={`HTML Tailwind D3chart Motion Bootstrap Next Figma Prisma GSAP CSS Git React MongoDB Hero-UI JavaScript Java Material-UI TypeScript Python Shadcn-UI GitHub Radix-UI.`}
           highlightWords={[
             "React",
-            "Bits",
-            "animated",
-            "components",
-            "simplify",
+            "Next",
+            "TypeScript",
+            "JavaScript",
+            "Tailwind",
+            "GitHub"
           ]}
           highlightClass="highlighted"
           trigger="hover"
@@ -32,7 +33,7 @@ export default function Home() {
           mouseConstraintStiffness={0.9}
         />
       </div>
-      <Newsletter />
+      {/* <Newsletter /> */}
     </div>
   );
 }

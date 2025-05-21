@@ -7,7 +7,7 @@ interface Props {
   children: ReactNode;
 }
 
-export default function CustomCursorHero({ name, children }: Props) {
+export default function CustomCursorHero({ children }: Props) {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -44,11 +44,11 @@ export default function CustomCursorHero({ name, children }: Props) {
     <div ref={sectionRef} className="relative">
       {visible && (
         <motion.div
-          className="fixed z-50 pointer-events-none bg-black text-white px-4 py-2 rounded-2xl text-sm font-bold shadow-xl"
-          animate={{ x: pos.x + 20, y: pos.y + 20 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          className="fixed z-50 pointer-events-none bg-b text-secondary dark:text-white px-4 py-2 rounded-2xl text-sm font-bold "
+          animate={{ x: pos.x - 10, y: pos.y - 100 }}
+          transition={{ type: 'spring', stiffness: 500, damping: 50 }}
         >
-          {name}
+          <div className='rounded-full w-5 h-5 bg-black/20 dark:bg-secondary'></div>
         </motion.div>
       )}
       {children}

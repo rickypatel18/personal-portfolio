@@ -1,12 +1,17 @@
+export interface ProjectImages {
+   [key: string]: string; // Allows oi1, oi2, etc.
+}
+
 export interface Project {
-  key:string,
-  bgColor:string,
+  id: string;
+  bgColor?: `bg-${string}-${number}`;
   title: string;
   description: string;
+  fullDescription: string;
   technologies: string[];
   githubLink: string;
-  demoLink: string;
   image: string;
+  otherImages?: ProjectImages[];
 }
 
 export interface Blog {
@@ -15,5 +20,5 @@ export interface Blog {
   date: string;
   readTime: string;
   slug: string;
-  tasks: string[]
+  tasks: string[];
 }

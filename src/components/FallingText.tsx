@@ -246,8 +246,8 @@ FallingTextProps) => {
   };
 
   return (
-    <div className="py-20 px-0  bg-white dark:bg-black">
-      <div className="px-4 bg-white dark:bg-black shadow-md overflow-hidden animate-slide-up  ">
+    <div className="pt-20 px-0  bg-white dark:bg-black">
+      <div className="px-4 bg-white dark:bg-black  overflow-hidden">
         <div className="max-w-7xl mx-auto  px-0 xl:px-4 2xl:px-0">
           <motion.h2
             className="text-3xl-l font-bold mb-12 text-center"
@@ -278,13 +278,13 @@ FallingTextProps) => {
               ref={canvasContainerRef}
             />
           </div>
-          <div className="mt-5">
+          <div className="mt-5 mb-10">
             <Link
               href="/about"
               className=" animate-bounce"
              
             >
-              <p className="relative overflow-hidden w-fit h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-lg bg-white hover:bg-gray-300/90 animate-bounce text-black shadow-2xl hover:shadow-secondary transition-all">
+              <p className="relative overflow-hidden w-fit px-5 py-2 flex justify-center items-center rounded-lg bg-gray-300/90 hover:bg-white dark:bg-white dark:hover:bg-gray-300/90 animate-bounce text-black shadow-2xl hover:shadow-secondary transition-all font-bold text-sm lg:text-md">
                 More about me
               </p>
             </Link>

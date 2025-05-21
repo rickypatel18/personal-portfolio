@@ -42,7 +42,7 @@ export const pageTransition = {
 };
 
 export const slideInLeft = {
-  initial: { x: -60, opacity: 0 },
+  initial: { x: -60, y: 60, opacity: 0 },
   animate: { x: 0, opacity: 1 },
   transition: { duration: 0.5 },
 };

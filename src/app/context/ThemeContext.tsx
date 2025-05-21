@@ -40,7 +40,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const initialTheme = savedTheme || "dark"; //default to dark theme
 
     setThemeState(initialTheme);
-    console.log({ theme });
 
     document.documentElement.classList.toggle("dark", initialTheme === "dark");
     setMounted(true);

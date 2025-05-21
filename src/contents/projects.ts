@@ -2,11 +2,13 @@ import { Project } from "../types";
 
 export const projects: Project[] = [
   {
-    key: "0",
+    id: "1",
     bgColor: "bg-red-200",
     title: "Blog Post Website",
     description:
       "A blogging platform with Simple user Interface and Functionality, just like Todo App ",
+    fullDescription:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
     technologies: [
       "JavScript",
       "LocalStorage",
@@ -15,26 +17,42 @@ export const projects: Project[] = [
       "Personal Blog",
     ],
     githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    image:"/projects/chat.png"
+    image: "/new-project/p1.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p1-1.png",
+        oi2: "/new-project/p1-2.png",
+        oi3: "/new-project/p1-3.png",
+      },
+    ],
   },
   {
-    key: "1",
+    id: "2",
     bgColor: "bg-gray-200",
     title: "Recipe Finder",
     description:
       "A recipe search application using the TheMealDB API in javascript.",
+    fullDescription:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid. . Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
     technologies: ["Javascript", "TheMealDB API", "Reciepe", "Search-sort"],
     githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    image: "/projects/new.png",
+    image: "/new-project/p2.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p2-1.png",
+        oi2: "/new-project/p2-2.png",
+        oi3: "/new-project/p2-3.png",
+      },
+    ],
   },
   {
-    key: "2",
+    id: "3",
     bgColor: "bg-green-200",
     title: "Caredac WebApp",
     description:
       "A collaborative appointment schedular with real-time updates , worked on userPanel Webapp.",
+    fullDescription:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
     technologies: [
       "React",
       "Postman",
@@ -44,15 +62,22 @@ export const projects: Project[] = [
       "Full-Authentication",
     ],
     githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    image: "/projects/new.png",
+    image: "/new-project/p3.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p3-1.png",
+        oi2: "/new-project/p3-2.png",
+      },
+    ],
   },
   {
-    key: "3",
+    id: "4",
     bgColor: "bg-blue-200",
     title: "TrailerVerse",
     description:
       "The Reviewer : user can watch and review the movie, Tvshow ans series.",
+    fullDescription:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid. . Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
     technologies: [
       "React",
       "TMDB",
@@ -62,26 +87,41 @@ export const projects: Project[] = [
       "Dynamic",
     ],
     githubLink: "https://github.com",
-    demoLink: "https://demo.com",
     image: "/projects/portfolio.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p3-1.png",
+        oi2: "/new-project/p3-2.png",
+        oi3: "/new-project/p2-3.png",
+      },
+    ],
   },
   {
-    key: "4",
+    id: "5",
     bgColor: "bg-pink-200",
     title: "E-commerce Platform",
     description:
       "A design of e-commerce platform built with React.js, Tailwind CSS with cartSection.",
+    fullDescription:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
     technologies: ["React.js", "JavaScript", "Tailwind CSS", "Cart", "Static"],
     githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    image: "/projects/new.png",
+    image: "/new-project/p2-2.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p3-1.png",
+        oi2: "/new-project/p3-2.png",
+      },
+    ],
   },
   {
-    key: "5",
+    id: "6",
     bgColor: "bg-yellow-200",
     title: "Admin Dashboard",
     description:
       "A Dashboard to keep track of user data, orders, and products. Built with next.js and Rechart Library.",
+    fullDescription:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid. . Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
     technologies: [
       "Next",
       "HeroUI",
@@ -94,18 +134,32 @@ export const projects: Project[] = [
       "Typescript",
     ],
     githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    image: "/projects/weather.png",
+    image: "/new-project/p3-1.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p3-1.png",
+        oi2: "/new-project/p3-2.png",
+        oi3: "/new-project/p2-2.png",
+      },
+    ],
   },
   {
-    key: "6",
+    id: "7",
     bgColor: "bg-orange-200",
     title: "Portfolio Website",
     description:
-      "My personal portfolio website showcasing my drtails, projects and skills.",
+      "My personal portfolio website showcasing my details, projects and skills.",
+    fullDescription:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     githubLink: "https://github.com",
-    demoLink: "https://demo.com",
     image: "/projects/recipe.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p3-1.png",
+        oi2: "/new-project/p3-2.png",
+        oi3: "/new-project/p2-2.png",
+      },
+    ],
   },
 ];

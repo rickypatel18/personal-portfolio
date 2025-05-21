@@ -1,7 +1,7 @@
 export default function Newsletter() {
   return (
     <section className="px-0 ">
-      <div className="bg-white dark:bg-black shadow-md overflow-hidden animate-slide-up px-4 ">
+      <div className="bg-white dark:bg-black shadow-md overflow-hidden  px-4 ">
           <div className="max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>

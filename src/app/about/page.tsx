@@ -23,7 +23,7 @@ export default function About() {
 
       {/* Bio Section */}
       <motion.section className="mb-16" {...fadeInUp}>
-        <p className="text-lg text-secondary max-w-3xl mx-auto text-center">
+        <p className="text-sm lg:text-lg text-secondary max-w-3xl mx-auto text-center">
           Junior Frontend Developer with hands-on experience gained through
           internships, specializing in building responsive, performant, and
           accessible web applications. Strong foundation in modern JavaScript
@@ -52,9 +52,9 @@ export default function About() {
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaCode className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Frontend</h3>
-            <ul className="text-secondary space-y-2">
+            <FaCode className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
+            <h3 className="text-lg lg:text-xl font-semibold mb-2">Frontend</h3>
+            <ul className="text-secondary space-y-2 text-sm lg:text-lg">
               <li>HTML / CSS</li>
               <li>JavaScript / TypeScript</li>
               <li>React.js / Next.js</li>
@@ -66,7 +66,7 @@ export default function About() {
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaGraduationCap className="h-8 w-8 text-primary mb-4" />
+            <FaGraduationCap className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Basic</h3>
             <ul className="text-secondary space-y-2">
               <li>Java</li>
@@ -79,13 +79,13 @@ export default function About() {
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaGraduationCap className="h-8 w-8 text-primary mb-4" />
+            <FaGraduationCap className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Worked with</h3>
             <ul className="text-secondary space-y-2">
               <li>Tailwind / Bootstrap</li>
-              <li>Material UI / Radix UI</li>
-              <li>Shadcn UI / Hero UI</li>
-              <li>Framer Motion / GSAP</li>
+              <li>Material-UI / Radix-UI</li>
+              <li>Shadcn-UI / Hero-UI</li>
+              <li>Motion / GSAP</li>
               
             </ul>
           </motion.div>
@@ -95,7 +95,7 @@ export default function About() {
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaGraduationCap className="h-8 w-8 text-primary mb-4" />
+            <FaGraduationCap className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Tools & Other</h3>
             <ul className="text-secondary space-y-2">
               <li>Git / GitHub</li>
@@ -109,7 +109,7 @@ export default function About() {
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaLaptopCode className="h-8 w-8 text-primary mb-4" />
+            <FaLaptopCode className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Backend</h3>
             <ul className="text-secondary space-y-2">
               <li>Haven&apos;t Mastery in technology</li>
@@ -135,9 +135,9 @@ export default function About() {
             variants={fadeInUp}
             {...cardHoverSmall}
           >
-            <h3 className="text-xl font-semibold mb-2">Frontend Internship</h3>
+            <h3 className="text-lg lg:text-xl font-semibold mb-2">Frontend Internship</h3>
             <p className="text-primary mb-2">Techreale • Jan 2024 - May 2024</p>
-            <ul className="text-secondary list-disc list-inside space-y-2">
+            <ul className="text-secondary text-sm lg:text-lg list-disc list-inside space-y-2">
               <li>
                 Led development of multiple web applications using Reactjs.
               </li>

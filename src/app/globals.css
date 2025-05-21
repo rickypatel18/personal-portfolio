@@ -9,8 +9,6 @@
   --color-text: #000000;
   --color-bg: #ffffff;
   --font-sans: "Inter", sans-serif;
-  --animation-fade-in: fadeIn 0.5s ease-in-out;
-  --animation-slide-up: slideUp 0.5s ease-in-out;
 }
 .btn-grad {
   background-image: linear-gradient(
@@ -90,7 +88,7 @@ a {
     @apply bg-secondary text-white hover:bg-secondary/90;
   }
   .section-title {
-    @apply text-3xl font-bold mb-8 text-center;
+    @apply text-xl lg:text-2xl font-bold mb-8 text-center;
   }
   .flex-i {
     @apply flex  items-center;
