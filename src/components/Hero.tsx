@@ -86,13 +86,6 @@ export default function Hero() {
           className="overflow-hidden pointer-events-none"
         />
 
-        {/* Animated Glow Effect
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-purple-500/30 pointer-events-none rounded-lg "
-          animate={{ opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 4, repeat: Infinity }}
-        /> */}
-
         <div className="container max-w-7xl mx-auto px-0 relative z-10 pb-15">
           <motion.div
             className="max-w-3xl mx-auto text-center"
@@ -206,7 +199,7 @@ export default function Hero() {
                 <motion.a
                   key={i}
                   href="#"
-                  className="relative text-3xl p-2 rounded-full bg-white/5 backdrop-blur-sm "
+                  className="relative text-3xl p-2 rounded-full bg-white/5 backdrop-blur-sm"
                   whileHover={{
                     scale: 1.2,
                     rotate: [0, -15, 15, 0],
@@ -242,7 +235,7 @@ export default function Hero() {
                 className="relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-primary/90 hover:bg-primary text-white shadow-2xl hover:shadow-primary/30 transition-all"
               >
                 <span className="z-10 text-sm lg:text-lg">View Projects</span>
-                <motion.div className="absolute inset-0 bg-green-400 opacity-0 hover:opacity-100 transition-opacity " />
+                <motion.div className="absolute inset-0 bg-green-400 opacity-0 hover:opacity-100 transition-opacity"/>
                 <motion.div
                   className="absolute top-[1px] h-[1px] left-0 w-full  bg-gradient-to-r from-transparent via-white to-transparent"
                   animate={{ x: ["-100%", "100%"] }}
@@ -255,7 +248,7 @@ export default function Hero() {
                 className="relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-gray-200/90 dark:bg-gray-100/10 hover:bg-gray-300/90 dark:hover:bg-white/20 text-gray-800 dark:text-white shadow-2xl hover:shadow-secondary/30 transition-all"
               >
                 <span className="z-10 text-sm lg:text-lg">View Resume</span>
-                <motion.div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity" />
+                <motion.div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity"/>
                 <motion.div
                   className="absolute bottom-[1px] h-[1px] left-0 w-full bg-gradient-to-r from-transparent via-white to-transparent"
                   animate={{ x: ["100%", "-100%"] }}

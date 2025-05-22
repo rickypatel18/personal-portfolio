@@ -31,7 +31,7 @@ const Page = () => {
         >
           <MdKeyboardBackspace className="w-6 h-5 lg:w-10 lg:h-7 text-primary" />
         </button>
-        <div className={` rounded-lg mb-8`}>
+        <div className={`rounded-lg mb-8`}>
           <h1 className="text-2xl lg:text-3xl font-bold text-gray-700 dark:text-white">
             {project.title}
           </h1>
@@ -62,7 +62,7 @@ const Page = () => {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm "
+                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
                   >
                     {tech}
                   </span>
@@ -99,7 +99,7 @@ const Page = () => {
         </div>
 
         <div className="mt-15">
-          <button className=" animate-bounce">
+          <button className="animate-bounce">
             <p className="relative overflow-hidden w-fit px-5 py-2 flex justify-center items-center rounded-lg bg-gray-300/90 hover:bg-white dark:bg-white dark:hover:bg-gray-300/90 animate-bounce text-black shadow-2xl hover:shadow-secondary transition-all font-bold text-sm lg:text-md">
               Other images
             </p>

@@ -120,10 +120,10 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="footer-wrapper relative bg-white text-black dark:bg-black dark:text-white my-0 overflow-hidden px-0 cursor-none "
+      className="footer-wrapper relative bg-white text-black dark:bg-black dark:text-white my-0 overflow-hidden px-0 cursor-none"
     >
-      <div className="px-4 ">
-        <div className="max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0  ">
+      <div className="px-4">
+        <div className="max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0">
           {isInside && (
             <motion.div
               className="fixed top-0 left-0 w-5 h-5 bg-black/30 dark:bg-white/10 backdrop-blur-2xl rounded-full pointer-events-none z-50 cursor-none"
@@ -134,7 +134,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-10 text-center relative z-10">
             <motion.p
-              className="text-sm md:text-base font-bold text-gray-400 "
+              className="text-sm md:text-base font-bold text-gray-400"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -143,9 +143,9 @@ const Footer = () => {
               Want to work together?
             </motion.p>
 
-            <motion.div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10">
+            <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10">
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-5">
-                <h3 className=" text-xl text-primary font-[montserrat] font-semibold">
+                <h3 className="text-xl text-primary font-[montserrat] font-semibold">
                   Location
                 </h3>
                 <span className="flex flex-col justify-start items-start text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold text-start">
@@ -166,7 +166,7 @@ const Footer = () => {
                 </span>
               </div>
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-5">
-                <h3 className=" text-xl text-primary font-[montserrat] font-semibold">
+                <h3 className="text-xl text-primary font-[montserrat] font-semibold">
                   Profiles{" "}
                 </h3>
                 <span className="flex flex-col justify-start items-start font-[delius] font-bold text-lg md:text-xl lg:text-2xl 2xl:text-3xl text-start">
@@ -193,7 +193,7 @@ const Footer = () => {
                 </span>
               </div>
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-5">
-                <h3 className=" text-xl text-primary font-[montserrat] font-semibold">
+                <h3 className="text-xl text-primary font-[montserrat] font-semibold">
                   Contact
                 </h3>
                 <span className="flex flex-col justify-start items-start font-[delius] font-bold text-lg md:text-xl lg:text-2xl 2xl:text-3xl">
@@ -225,7 +225,7 @@ const Footer = () => {
                         `https://wa.me/${phoneNumber.replace(/\D/g, "")}` // 3. Redirect URL (optional)
                       );
                     }}
-                    className="relative text-gray-600  dark:text-gray-300  transition-colors cursor-pointer"
+                    className="relative text-gray-600  dark:text-gray-300 transition-colors cursor-pointer"
                     {...animations[1 % animations.length]}
                     transition={{ type: "spring", stiffness: 300 }}
                   >

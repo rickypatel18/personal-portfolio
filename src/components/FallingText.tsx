@@ -255,7 +255,7 @@ const FallingText = ({
           </motion.h2>
           <div
             ref={containerRef}
-            className="relative text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl 3xl:text-3xl z-[1] container h-[200px] sm:h-[250px] md:h-[250px] lg:h-[300px] xl:h-[350px] 3xl:h-[400px]  cursor-pointer text-center py-8 overflow-hidden  max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0  border-b-primary border-l-primary border-r-primary border-t-0 rounded-xl shadow-[0px_-23px_25px_0px_rgba(16,185,129,0.3)_inset,0px_-36px_30px_0px_rgba(16,185,129,0.2)_inset,0px_-79px_40px_0px_rgba(16,185,129,0.2)_inset,0px_2px_1px_rgba(34,197,94,0.4),0px_4px_2px_rgba(34,197,94,0.1),0px_8px_4px_rgba(34,197,94,0.1),0px_16px_8px_rgba(34,197,94,0.1),0px_32px_16px_rgba(34,197,94,0.1)] animate-pulse "
+            className="relative text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl 3xl:text-3xl z-[1] container h-[200px] sm:h-[250px] md:h-[250px] lg:h-[300px] xl:h-[350px] 3xl:h-[400px]  cursor-pointer text-center py-8 overflow-hidden  max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0  border-b-primary border-l-primary border-r-primary border-t-0 rounded-xl shadow-[0px_-23px_25px_0px_rgba(16,185,129,0.3)_inset,0px_-36px_30px_0px_rgba(16,185,129,0.2)_inset,0px_-79px_40px_0px_rgba(16,185,129,0.2)_inset,0px_2px_1px_rgba(34,197,94,0.4),0px_4px_2px_rgba(34,197,94,0.1),0px_8px_4px_rgba(34,197,94,0.1),0px_16px_8px_rgba(34,197,94,0.1),0px_32px_16px_rgba(34,197,94,0.1)] animate-pulse"
             onClick={trigger === "click" ? handleTrigger : undefined}
             onMouseOver={trigger === "hover" ? handleTrigger : undefined}
           >
@@ -267,7 +267,7 @@ const FallingText = ({
                 lineHeight: 1.4,
               }}
             />
-            <div className=" absolute top-0 w-full h-full flex justify-center items-center pt-20 sm:pt-10 md:pt-10 lg:pt-15 xl:pt-0 font-black text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-gray-100 dark:text-gray-100/10 -z-30">
+            <div className="absolute top-0 w-full h-full flex justify-center items-center pt-20 sm:pt-10 md:pt-10 lg:pt-15 xl:pt-0 font-black text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-gray-100 dark:text-gray-100/10 -z-30">
               Hover
             </div>
 

@@ -1,16 +1,16 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/app/context/ThemeContext";
+import { usePathname } from "next/navigation";
 import {
   SunIcon,
   MoonIcon,
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
-import { useTheme } from "@/app/context/ThemeContext";
-import { usePathname } from "next/navigation";
 
 const NAVBAR_THRESHOLD = 70;
 
@@ -18,6 +18,8 @@ export default function Navbar() {
   const pathName = usePathname();
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -27,13 +29,9 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
-    // { href: "/blogs", label: "Blogs" },
     { href: "/cv", label: "CV" },
     { href: "/contact", label: "Contact" },
   ];
-
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,7 +69,7 @@ export default function Navbar() {
       transition={{ duration: 0.9, ease: "backIn" }}
     >
       <div className="w-full xl:container mx-auto px-4 sm:px-4 md:px-4">
-        <div className="rounded-xl max-w-7xl mx-auto backdrop-blur-xs bg-gray-300/30 dark:bg-slate-800/60  my-3 m-0">
+        <div className="rounded-xl max-w-7xl mx-auto backdrop-blur-xs bg-gray-300/30 dark:bg-slate-800/60 my-3 m-0">
           <div className="flex items-center justify-between h-16 px-4">
             <Link href="/" className="text-2xl font-bold text-primary font-[montserrat]">
               Devfolio™
@@ -98,6 +96,7 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+
               <motion.button
                 onClick={toggleTheme}
                 className="p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
@@ -138,6 +137,7 @@ export default function Navbar() {
                   <MoonIcon className="h-5 w-5 text-gray-700 dark:text-gray-600" />
                 )}
               </motion.button>
+
               <motion.button
                 className="p-1.5 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
                 onClick={toggleMobileMenu}
@@ -163,7 +163,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="md:hidden "
+                className="md:hidden"
               >
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
                   {/* Tailwind's recommended mobile menu padding */}
@@ -193,31 +193,7 @@ export default function Navbar() {
                       </motion.div>
                     );
                   })}
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: menuItems.length * 0.1 }}
-                  >
-                    <button
-                      onClick={() => {
-                        toggleTheme();
-                        setIsMobileMenuOpen(false);
-                      }}
-                      className="flex-i py-2 px-3 hover:text-primary transition-colors"
-                    >
-                      {theme === "dark" ? (
-                        <>
-                          <SunIcon className="h-5 w-5 mr-2" />
-                          Light Mode
-                        </>
-                      ) : (
-                        <>
-                          <MoonIcon className="h-5 w-5 mr-2" />
-                          Dark Mode
-                        </>
-                      )}
-                    </button>
-                  </motion.div>
+                  
                 </div>
               </motion.div>
             )}

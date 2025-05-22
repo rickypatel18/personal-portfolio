@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { z } from "zod";
 import {
   fadeInUp,
   fadeIn,
@@ -10,10 +11,26 @@ import {
   slideInRight,
 } from "../../utils/animation";
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
+// Define Zod schema for form validation
+const ContactFormSchema = z.object({
+  name: z.string().min(3, { message: "Name is required" }),
+  email: z
+    .string()
+    .min(5, { message: "Email is required" })
+    .email({ message: "Invalid email address" }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters long" }),
+});
+
+// Infer FormData type from Zod schema
+type FormData = z.infer<typeof ContactFormSchema>;
+
+// Type for form errors
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
 }
 
 type FormStatus = "idle" | "loading" | "success" | "error";
@@ -25,9 +42,28 @@ export default function ContactForm() {
     message: "",
   });
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
+
+    // Validate form data
+    const validationResult = ContactFormSchema.safeParse(formData);
+
+    if (!validationResult.success) {
+      const fieldErrors: FormErrors = {};
+      validationResult.error.errors.forEach((err) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as keyof FormErrors] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      setStatus("idle");
+      return;
+    }
+
+    // If validation is successful, proceed with submission
     setStatus("loading");
 
     try {
@@ -36,13 +72,14 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(validationResult.data),
       });
 
       if (!response.ok) throw new Error("Failed to send message");
 
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
+      setErrors({});
     } catch {
       setStatus("error");
     }
@@ -51,10 +88,19 @@ export default function ContactForm() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+
+    // Clear error for the field being changed
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: undefined,
+      }));
+    }
   };
 
   return (
@@ -66,7 +112,7 @@ export default function ContactForm() {
         transition={{ delay: 0.5, duration: 5 }}
       >
         {/* Contact Information */}
-        <motion.div className="space-y-8 " {...slideInLeft} >
+        <motion.div className="space-y-8 " {...slideInLeft}>
           <motion.div {...fadeInUp}>
             <h2 className="text-subheading mb-4 font-[montserrat] font-bold">
               Stay Connected
@@ -145,6 +191,7 @@ export default function ContactForm() {
             variants={fadeIn}
             initial="initial"
             animate="animate"
+            noValidate 
           >
             <motion.div variants={fadeInUp}>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -157,9 +204,17 @@ export default function ContactForm() {
                 placeholder="Enter your name"
                 value={formData.name}
                 onChange={handleChange}
-                required
-                className=" w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-900 bg-white dark:bg-gray-900 focus:outline-none focus:border-primary"
+                className={`w-full px-4 py-2 rounded-md border ${
+                  errors.name
+                    ? "border-red-500"
+                    : "border-gray-300 dark:border-gray-900"
+                } bg-white dark:bg-gray-900 focus:outline-none focus:border-primary`}
               />
+              {errors.name && (
+                <p id="name-error" className="text-red-500 text-xs mt-1">
+                  {errors.name}
+                </p>
+              )}
             </motion.div>
 
             <motion.div variants={fadeInUp}>
@@ -173,9 +228,17 @@ export default function ContactForm() {
                 placeholder="Enter your email "
                 value={formData.email}
                 onChange={handleChange}
-                required
-                className=" w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-900 bg-white dark:bg-gray-900 focus:outline-none focus:border-primary"
+                className={`w-full px-4 py-2 rounded-md border ${
+                  errors.email
+                    ? "border-red-500"
+                    : "border-gray-300 dark:border-gray-900"
+                } bg-white dark:bg-gray-900 focus:outline-none focus:border-primary`}
               />
+              {errors.email && (
+                <p id="email-error" className="text-red-500 text-xs mt-1">
+                  {errors.email}
+                </p>
+              )}
             </motion.div>
 
             <motion.div variants={fadeInUp}>
@@ -191,10 +254,18 @@ export default function ContactForm() {
                 placeholder="Enter your message "
                 value={formData.message}
                 onChange={handleChange}
-                required
                 rows={4}
-                className=" w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-900 bg-white dark:bg-gray-900 focus:outline-none focus:border-primary"
+                className={`w-full px-4 py-2 rounded-md border ${
+                  errors.message
+                    ? "border-red-500"
+                    : "border-gray-300 dark:border-gray-900"
+                } bg-white dark:bg-gray-900 focus:outline-none focus:border-primary`}
               />
+              {errors.message && (
+                <p id="message-error" className="text-red-500 text-xs mt-1">
+                  {errors.message}
+                </p>
+              )}
             </motion.div>
 
             <motion.button
@@ -213,7 +284,7 @@ export default function ContactForm() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                Message sent successfully!
+                Message sent successfully! (not really)
               </motion.p>
             )}
 

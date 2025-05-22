@@ -44,7 +44,7 @@ export default function CustomCursorHero({ children }: Props) {
     <section ref={sectionRef} className="custom-cursor-section relative">
       {visible && (
         <motion.div
-          className="fixed z-50 pointer-events-none bg-b text-secondary dark:text-white px-4 py-2 rounded-2xl text-sm font-bold "
+          className="fixed z-50 pointer-events-none bg-b text-secondary dark:text-white px-4 py-2 rounded-2xl text-sm font-bold"
           animate={{ x: pos.x - 10, y: pos.y - 100 }}
           transition={{ type: "spring", stiffness: 500, damping: 50 }}
         >
