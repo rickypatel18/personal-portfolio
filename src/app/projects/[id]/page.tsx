@@ -94,30 +94,34 @@ const Page = () => {
               Other images
             </p>
           </button>
-          {project.otherImages?.map((imageGroup, index) => (
-            <div
-              key={`image-group-${index}`}
-              className="grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-3 gap-5"
-            >
-              {/* Display each image in the group */}
-              {Object.entries(imageGroup).map(([key, imageUrl]) => (
-                <motion.div
-                  key={key}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="aspect-video bg-gray-200 dark:bg-gray-950 rounded-lg"
-                >
-                  <Image
-                    src={imageUrl}
-                    alt={`${project.title} ${index + 1}`}
-                    width={500}
-                    height={500}
-                    className="h-[100%] w-[100%] object-cover rounded-lg"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          ))}
+          {project.otherImages ? (
+            project.otherImages?.map((imageGroup, index) => (
+              <div
+                key={`image-group-${index}`}
+                className="grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-3 gap-5"
+              >
+                {/* Display each image in the group */}
+                {Object.entries(imageGroup).map(([key, imageUrl]) => (
+                  <motion.div
+                    key={key}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="aspect-video bg-gray-200  dark:bg-gray-950 rounded-lg"
+                  >
+                    <Image
+                      src={imageUrl}
+                      alt={`${project.title} ${index + 1}`}
+                      width={400}
+                      height={300}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            ))
+          ) : (
+            <p className="text-[red]">There is no other images uploaded</p>
+          )}
         </div>
       </div>
     </section>
