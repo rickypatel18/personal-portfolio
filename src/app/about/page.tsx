@@ -8,12 +8,13 @@ import {
   staggerContainer,
   cardHover,
   cardHoverSmall,
-} from "../../utils/animation";
-import { education, experience, skillsData } from "@/contents/aboutData";
-
-
+} from "../../utils/animation"; 
+import { education, experience, skillsData } from "@/contents/aboutData"; 
+import { useRef } from "react";
 
 export default function About() {
+  const constraintsRef = useRef(null); 
+
   return (
     <section className="about-section container max-w-7xl mx-auto py-12 px-4 md:px-4 2xl:px-0">
       <motion.h1
@@ -39,26 +40,38 @@ export default function About() {
       </motion.section>
 
       {/* Skills Section */}
-      <motion.section className="skill-section mb-16" {...fadeIn} transition={{ delay: 0.2 }}>
+      <motion.section
+        ref={constraintsRef}
+        className="skill-section mb-16"
+        {...fadeIn}
+        transition={{ delay: 0.2 }}
+      >
         <motion.h2 className="section-title font-[montserrat]" {...fadeInUp}>
           Skills
         </motion.h2>
         <motion.div
-          className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-4 gap-6"
           variants={staggerContainer}
           initial="initial"
           animate="animate"
         >
           {skillsData.map((skill) => {
-            const Icon = skill.icon;
+            const Icon = skill.icon; 
             return (
               <motion.div
                 key={skill.id}
-                className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
+                className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md cursor-grab"
                 variants={fadeInUp}
                 {...cardHover}
+                drag 
+                dragConstraints={constraintsRef}
+                dragElastic={0.1}
+                whileDrag={{
+                  scale: 0.9,
+                  zIndex: 10,
+                }}
               >
-                <Icon className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
+                {Icon && <Icon className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4"/>}
                 <h3
                   className={`text-lg lg:text-xl font-semibold mb-2 ${skill.font}`}
                 >
@@ -76,7 +89,11 @@ export default function About() {
       </motion.section>
 
       {/* Experience Section */}
-      <motion.section className="experience-section mb-16" {...fadeIn} transition={{ delay: 0.4 }}>
+      <motion.section
+        className="experience-section mb-16"
+        {...fadeIn}
+        transition={{ delay: 0.4 }}
+      >
         <motion.h2 className="section-title font-[montserrat]" {...fadeInUp}>
           Experience
         </motion.h2>
@@ -96,7 +113,9 @@ export default function About() {
               <h3 className="text-lg lg:text-xl font-semibold mb-2 font-[montserrat]">
                 {item.title}
               </h3>
-              <p className="text-primary mb-2 font-[delius] font-semibold">{item.company}</p>
+              <p className="text-primary mb-2 font-[delius] font-semibold">
+                {item.company}
+              </p>
               <ul className="text-secondary text-sm lg:text-lg list-disc list-inside space-y-2">
                 {item.ul.map((point, index) => (
                   <li key={index}>{point}</li>
@@ -108,7 +127,11 @@ export default function About() {
       </motion.section>
 
       {/* Education Section */}
-      <motion.section className="education-section" {...fadeIn} transition={{ delay: 0.6 }}>
+      <motion.section
+        className="education-section"
+        {...fadeIn}
+        transition={{ delay: 0.6 }}
+      >
         <motion.h2 className="section-title font-[montserrat]" {...fadeInUp}>
           Education
         </motion.h2>
@@ -128,7 +151,9 @@ export default function About() {
               <h3 className="text-xl font-semibold mb-2 font-[montserrat]">
                 {item.title}
               </h3>
-              <p className="text-primary mb-2 font-[delius] font-semibold">{item.college}</p>
+              <p className="text-primary mb-2 font-[delius] font-semibold">
+                {item.college}
+              </p>
               <ul className="text-secondary text-sm lg:text-lg list-disc list-inside space-y-2">
                 {item.ul.map((point, index) => (
                   <li key={index}>{point}</li>

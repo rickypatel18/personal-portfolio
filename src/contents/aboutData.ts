@@ -22,8 +22,7 @@ export const skillsData: AboutSkillData[] = [
     icon: FaGraduationCap,
     items: [
       "Tailwind / Bootstrap",
-      "Material-UI / Radix-UI",
-      "Shadcn-UI / Hero-UI",
+      "Shadcn-UI / Hero-UI / Material-UI",
       "Motion / GSAP",
     ],
     font: "font-[montserrat]",
