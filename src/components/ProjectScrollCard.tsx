@@ -11,12 +11,12 @@ const ProjectScrollCard = () => {
   const widthDecrement = "w-5/6";
 
   return (
-    <div className="bg-white dark:bg-black pt-5 lg:pt-10 px-0">
+    <section className="project-scroll-section bg-white dark:bg-black pt-5 lg:pt-10 px-0">
       <div className=" px-4 ">
         <div className="max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0">
           <div className="mb-15 bg-white dark:bg-black flex items-center justify-center">
             <motion.h2
-              className="text-3xl-l font-bold text-center"
+              className="text-3xl-l font-bold text-center font-[montserrat]"
               {...fadeInUp}
             >
               Featured Projects
@@ -58,8 +58,8 @@ const ProjectScrollCard = () => {
                     }}
                   />
                 </div>
-                <div className="absolute top-50% left-0 max-w-[250px] h-fit xl:max-w-xl p-1 lg:p-2 text-center z-20 bg-primary rounded-l-none rounded-t-3xl flex flex-col">
-                  <h2 className="text-md md:text-lg xl:text-xl 2xl:text-2xl text-black pl-1">
+                <div className="absolute top-50% left-0 max-w-[250px] h-fit xl:max-w-xl p-1 lg:p-2 text-center z-20 bg-primary rounded-l-none rounded-t-3xl flex flex-col font-[delius] font-bold">
+                  <h2 className="text-[16px] md:text-lg xl:text-xl 2xl:text-2xl text-black pl-2 md:pl-3 lg:pl-4 xl:pl-5">
                     {item.title}
                   </h2>
                 </div>
@@ -67,14 +67,14 @@ const ProjectScrollCard = () => {
             ))}
             <Link
               href="/projects"
-              className="relative font-bold text-sm lg:text-md overflow-hidden w-fit px-5 py-2 flex justify-center items-center rounded-lg bg-gray-300/90 hover:bg-white dark:bg-white dark:hover:bg-gray-300/90 animate-bounce text-black shadow-2xl hover:shadow-secondary transition-all"
+              className="relative text-sm lg:text-[16px] overflow-hidden w-fit px-5 py-2 flex justify-center items-center rounded-lg bg-gray-300/90 hover:bg-white dark:bg-white dark:hover:bg-gray-300/90 animate-bounce text-black shadow-2xl hover:shadow-secondary transition-all font-[delius] font-bold"
             >
               Project Details here
             </Link>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

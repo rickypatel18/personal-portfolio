@@ -64,7 +64,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className="w-full fixed top-3 left-0 z-50 "
+      className="navbar-wrapper w-full fixed top-3 left-0 z-50"
       variants={navbarVariants}
       initial="visible"
       animate={isVisible ? "visible" : "hidden"}
@@ -73,7 +73,7 @@ export default function Navbar() {
       <div className="w-full xl:container mx-auto px-4 sm:px-4 md:px-4">
         <div className="rounded-xl max-w-7xl mx-auto backdrop-blur-xs bg-gray-300/30 dark:bg-slate-800/60  my-3 m-0">
           <div className="flex items-center justify-between h-16 px-4">
-            <Link href="/" className="text-2xl font-bold text-primary">
+            <Link href="/" className="text-2xl font-bold text-primary font-[montserrat]">
               Devfolio™
             </Link>
 
@@ -88,7 +88,7 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`text-md transition-colors hover:text-primary dark:hover:text-primary ${
+                    className={`transition-colors hover:text-primary dark:hover:text-primary ${
                       isActive
                         ? "font-semibold text-primary"
                         : "text-gray-700 dark:text-gray-300"

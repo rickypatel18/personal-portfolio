@@ -3,8 +3,8 @@
 import { useRef, useState, useEffect } from "react";
 import Matter from "matter-js";
 import { fadeInUp } from "@/utils/animation";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 type FallingTextProps = {
   text: string;
@@ -27,7 +27,7 @@ const FallingText = ({
   gravity = 1,
   mouseConstraintStiffness = 0.2,
 }: //   fontSize = "1rem",
-FallingTextProps) => {
+  FallingTextProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
@@ -57,11 +57,10 @@ FallingTextProps) => {
       .map((word) => {
         const isHighlighted = highlightWords.some((hw) => word.startsWith(hw));
         return `<span
-      class="inline-block mx-[2px] select-none  ${
-        isHighlighted
-          ? "btn-gradDark  font-bold py-0 lg:py-1 px-2 lg:px-5"
-          : " btn-grad py-0 lg:py-1 px-2 lg:px-5 "
-      }"
+      class="inline-block mx-[2px] select-none ${isHighlighted
+            ? "btn-gradDark font-bold py-0 lg:py-1 px-2 lg:px-5"
+            : "btn-grad py-0 lg:py-1 px-2 lg:px-5"
+          }"
     >
       ${word}
     </span>`;
@@ -177,12 +176,10 @@ FallingTextProps) => {
 
     wordBodies.forEach(({ elem, body }) => {
       elem.style.position = "absolute";
-      elem.style.left = `${
-        body.position.x - body.bounds.max.x + body.bounds.min.x / 2
-      }px`;
-      elem.style.top = `${
-        body.position.y - body.bounds.max.y + body.bounds.min.y / 2
-      }px`;
+      elem.style.left = `${body.position.x - body.bounds.max.x + body.bounds.min.x / 2
+        }px`;
+      elem.style.top = `${body.position.y - body.bounds.max.y + body.bounds.min.y / 2
+        }px`;
       elem.style.transform = "none";
     });
 
@@ -214,6 +211,7 @@ FallingTextProps) => {
         const { x, y } = body.position;
         elem.style.left = `${x}px`;
         elem.style.top = `${y}px`;
+        elem.style.color = "#101828"; //after fall text color change to this
         elem.style.transform = `translate(-50%, -50%) rotate(${body.angle}rad)`;
       });
       Matter.Engine.update(engine);
@@ -246,18 +244,18 @@ FallingTextProps) => {
   };
 
   return (
-    <div className="pt-20 px-0  bg-white dark:bg-black">
-      <div className="px-4 bg-white dark:bg-black  overflow-hidden">
+    <section className="falling-text-section pt-20 px-0  bg-white dark:bg-black">
+      <div className="px-4 bg-white dark:bg-black overflow-hidden">
         <div className="max-w-7xl mx-auto  px-0 xl:px-4 2xl:px-0">
           <motion.h2
-            className="text-3xl-l font-bold mb-12 text-center"
+            className="text-3xl-l font-bold mb-12 text-center font-[montserrat]"
             {...fadeInUp}
           >
             Skills
           </motion.h2>
           <div
             ref={containerRef}
-            className="relative text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl 3xl:text-3xl z-[1] container h-[200px] sm:h-[250px] md:h-[250px] lg:h-[300px] xl:h-[350px] 3xl:h-[400px]  cursor-pointer text-center py-8 overflow-hidden  max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0  border-b-primary border-l-primary border-r-primary border-t-0 rounded-xl shadow-[0px_-23px_25px_0px_rgba(16,185,129,0.17)_inset,0px_-36px_30px_0px_rgba(16,185,129,0.15)_inset,0px_-79px_40px_0px_rgba(16,185,129,0.1)_inset,0px_2px_1px_rgba(34,197,94,0.06),0px_4px_2px_rgba(34,197,94,0.09),0px_8px_4px_rgba(34,197,94,0.09),0px_16px_8px_rgba(34,197,94,0.09),0px_32px_16px_rgba(34,197,94,0.09)] animate-pulse"
+            className="relative text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl 3xl:text-3xl z-[1] container h-[200px] sm:h-[250px] md:h-[250px] lg:h-[300px] xl:h-[350px] 3xl:h-[400px]  cursor-pointer text-center py-8 overflow-hidden  max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0  border-b-primary border-l-primary border-r-primary border-t-0 rounded-xl shadow-[0px_-23px_25px_0px_rgba(16,185,129,0.3)_inset,0px_-36px_30px_0px_rgba(16,185,129,0.2)_inset,0px_-79px_40px_0px_rgba(16,185,129,0.2)_inset,0px_2px_1px_rgba(34,197,94,0.4),0px_4px_2px_rgba(34,197,94,0.1),0px_8px_4px_rgba(34,197,94,0.1),0px_16px_8px_rgba(34,197,94,0.1),0px_32px_16px_rgba(34,197,94,0.1)] animate-pulse "
             onClick={trigger === "click" ? handleTrigger : undefined}
             onMouseOver={trigger === "hover" ? handleTrigger : undefined}
           >
@@ -274,24 +272,20 @@ FallingTextProps) => {
             </div>
 
             <div
-              className="absolute top-0 left-0 z-0 "
+              className="absolute top-0 left-0 z-0"
               ref={canvasContainerRef}
             />
           </div>
           <div className="mt-5 mb-10">
-            <Link
-              href="/about"
-              className=" animate-bounce"
-             
-            >
-              <p className="relative overflow-hidden w-fit px-5 py-2 flex justify-center items-center rounded-lg bg-gray-300/90 hover:bg-white dark:bg-white dark:hover:bg-gray-300/90 animate-bounce text-black shadow-2xl hover:shadow-secondary transition-all font-bold text-sm lg:text-md">
+            <Link href="/about" className=" animate-bounce">
+              <p className="relative overflow-hidden w-fit px-5 py-2 flex justify-center items-center rounded-lg bg-gray-300/90 hover:bg-white dark:bg-white dark:hover:bg-gray-300/90 animate-bounce text-black shadow-2xl hover:shadow-secondary transition-all text-sm lg:text-[16px] font-[delius] font-bold">
                 More about me
               </p>
             </Link>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

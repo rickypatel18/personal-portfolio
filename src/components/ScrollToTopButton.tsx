@@ -42,7 +42,7 @@ const ScrollToTopButton = () => {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-10 lg:bottom-20 right-5 lg:right-15 z-50 p-1.5 lg:p-2.5 font-black text-white rounded-full shadow-orange-500 shadow-md dark:shadow-md cursor-pointer"
+          className="scroll-button fixed bottom-10 lg:bottom-20 right-5 lg:right-15 z-50 p-1.5 lg:p-2.5 font-black text-white rounded-full shadow-orange-500 shadow-md dark:shadow-md cursor-pointer hover:shadow-lg"
           variants={buttonVariants}
           initial="hidden"
           animate="visible"
@@ -51,11 +51,10 @@ const ScrollToTopButton = () => {
           aria-label="Scroll to top"
           title="Scroll to top"
         >
-          {/* <ArrowUpIcon className="h-6 w-6"/> */}
           <Image
             src="/greenArrow.png"
             alt="up arrow"
-            className=" h-7 w-7 lg:h-9 lg:w-9"
+            className=" h-7 w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9"
             height={20}
             width={20}
           ></Image>

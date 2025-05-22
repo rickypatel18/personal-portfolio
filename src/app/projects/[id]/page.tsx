@@ -1,11 +1,11 @@
 "use client";
 
-import { projects } from "@/contents/projects";
 import React from "react";
-import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { projects } from "@/contents/projects";
 import { notFound, useParams } from "next/navigation";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 
 const Page = () => {
   const params = useParams();
@@ -18,7 +18,7 @@ const Page = () => {
   }
 
   return (
-    <section className="px-4 py-10 min-h-screen bg-white dark:bg-black">
+    <section className="project-detail-card px-4 py-10 min-h-screen bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto">
         <div className={` rounded-lg mb-8`}>
           <h1 className="text-2xl lg:text-3xl font-bold text-gray-700 dark:text-white">

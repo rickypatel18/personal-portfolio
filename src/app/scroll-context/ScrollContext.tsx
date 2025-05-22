@@ -1,24 +1,20 @@
 "use client";
 
-// for smooth scrolling
-
 import { useEffect, useState, createContext, useContext } from "react";
 import Lenis from "lenis";
 
-//////////////////////////
+// types define
 type LenisInstance = {
   raf: (time: number) => void;
   destroy: () => void;
 };
-type SmoothScrollerContextType = LenisInstance | null;
 
+type SmoothScrollerContextType = LenisInstance | null;
 interface ScrollContextProps {
   children: React.ReactNode;
 }
-// /////////////////////
 
 const smoothScrollerContext = createContext<SmoothScrollerContextType>(null);
-
 export const useSmoothScroller = () => useContext(smoothScrollerContext);
 
 const ScrollContext = ({ children }: ScrollContextProps) => {

@@ -3,7 +3,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
-
 interface ThemeContextType {
   theme: Theme;
   toggleTheme: () => void;
@@ -45,8 +44,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setMounted(true);
   }, []);
 
-  // Prevent flash of wrong theme
-  if (!mounted) {
+   if (!mounted) {
     return null;
   }
 

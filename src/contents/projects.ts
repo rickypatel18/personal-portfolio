@@ -34,7 +34,7 @@ export const projects: Project[] = [
       "A recipe search application using the TheMealDB API in javascript.",
     fullDescription:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid. . Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
-    technologies: ["Javascript", "TheMealDB API", "Reciepe", "Search-sort"],
+    technologies: ["Javascript", "TheMealDB API", "Reciepe", "Search-sort",],
     githubLink: "https://github.com",
     image: "/new-project/p2.png",
     otherImages: [
@@ -96,26 +96,8 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
+   {
     id: "5",
-    bgColor: "bg-pink-200",
-    title: "E-commerce Platform",
-    description:
-      "A design of e-commerce platform built with React.js, Tailwind CSS with cartSection.",
-    fullDescription:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
-    technologies: ["React.js", "JavaScript", "Tailwind CSS", "Cart", "Static"],
-    githubLink: "https://github.com",
-    image: "/new-project/p2-2.png",
-    otherImages: [
-      {
-        oi1: "/new-project/p3-1.png",
-        oi2: "/new-project/p3-2.png",
-      },
-    ],
-  },
-  {
-    id: "6",
     bgColor: "bg-yellow-200",
     title: "Admin Dashboard",
     description:
@@ -144,7 +126,73 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "6",
+    bgColor: "bg-pink-200",
+    title: "E-commerce Platform",
+    description:
+      "A design of e-commerce platform built with React.js, Tailwind CSS with cartSection.",
+    fullDescription:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
+    technologies: ["React.js", "JavaScript", "Tailwind CSS", "Cart", "Static"],
+    githubLink: "https://github.com",
+    image: "/new-project/p2-2.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p3-1.png",
+        oi2: "/new-project/p3-2.png",
+      },
+    ],
+  },
+  {
     id: "7",
+    bgColor: "bg-yellow-200",
+    title: "Admin Dashboard",
+    description:
+      "A Dashboard to keep track of user data, orders, and products. Built with next.js and Rechart Library.",
+    fullDescription:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid. . Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
+    technologies: [
+      "Next",
+      "HeroUI",
+      "Tailwind",
+      "Authentication",
+      "Protected Route",
+      "Rechart",
+      "Theme Based",
+      "Responsive",
+      "Typescript",
+    ],
+    githubLink: "https://github.com",
+    image: "/new-project/p3-1.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p3-1.png",
+        oi2: "/new-project/p3-2.png",
+        oi3: "/new-project/p2-2.png",
+      },
+    ],
+  },
+  {
+    id: "8",
+    bgColor: "bg-orange-200",
+    title: "Portfolio Website",
+    description:
+      "My personal portfolio website showcasing my details, projects and skills.",
+    fullDescription:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, debitis facere. Voluptates exercitationem nemo fuga, quam possimus sed iusto in! Perferendis porro velit laboriosam fuga, modi dolorem iusto ipsam dolorum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.. Eius ducimus assumenda fugiat voluptas consectetur perferendis totam cumque officiis reprehenderit aliquid veniam cupiditate quidem facere suscipit commodi hic, necessitatibus blanditiis? Aliquid.",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+    githubLink: "https://github.com",
+    image: "/projects/recipe.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p3-1.png",
+        oi2: "/new-project/p3-2.png",
+        oi3: "/new-project/p2-2.png",
+      },
+    ],
+  },
+  {
+    id: "9",
     bgColor: "bg-orange-200",
     title: "Portfolio Website",
     description:

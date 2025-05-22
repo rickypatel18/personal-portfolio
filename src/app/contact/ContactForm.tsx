@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import {
   fadeInUp,
   fadeIn,
@@ -58,7 +58,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="container max-w-7xl mx-auto py-12 px-0 xl:px-4">
+    <section className="contact-form-main container max-w-7xl mx-auto py-12 px-0 xl:px-4">
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-12"
         initial={{ y: 0 }}
@@ -68,10 +68,10 @@ export default function ContactForm() {
         {/* Contact Information */}
         <motion.div className="space-y-8 " {...slideInLeft} >
           <motion.div {...fadeInUp}>
-            <h2 className="text-subheading font-semibold mb-4">
+            <h2 className="text-subheading mb-4 font-[montserrat] font-bold">
               Stay Connected
             </h2>
-            <p className="text-secondary">
+            <p className="text-secondary font-[delius] font-bold">
               I&apos;m always open to discussing new projects, creative ideas,
               or opportunities to be part of your visions.
             </p>
@@ -229,6 +229,6 @@ export default function ContactForm() {
           </motion.form>
         </motion.div>
       </motion.div>
-    </div>
+    </section>
   );
 }

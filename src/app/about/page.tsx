@@ -1,6 +1,5 @@
 "use client";
 
-import { FaCode, FaLaptopCode, FaGraduationCap } from "react-icons/fa";
 import { motion } from "framer-motion";
 import {
   fadeInUp,
@@ -10,20 +9,23 @@ import {
   cardHover,
   cardHoverSmall,
 } from "../../utils/animation";
+import { education, experience, skillsData } from "@/contents/aboutData";
+
+
 
 export default function About() {
   return (
-    <div className="container max-w-7xl mx-auto py-12 px-4 md:px-4 2xl:px-0">
+    <section className="about-section container max-w-7xl mx-auto py-12 px-4 md:px-4 2xl:px-0">
       <motion.h1
-        className="text-page-heading font-bold mb-8 text-center"
+        className="text-page-heading font-bold mb-8 text-center font-[montserrat]"
         {...fadeInDown}
       >
         About Me
       </motion.h1>
 
       {/* Bio Section */}
-      <motion.section className="mb-16" {...fadeInUp}>
-        <p className="text-sm lg:text-lg text-secondary max-w-3xl mx-auto text-center">
+      <motion.section className="bio-section mb-16" {...fadeInUp}>
+        <p className="text-sm lg:text-lg text-secondary max-w-3xl mx-auto text-center font-[delius] font-bold">
           Junior Frontend Developer with hands-on experience gained through
           internships, specializing in building responsive, performant, and
           accessible web applications. Strong foundation in modern JavaScript
@@ -37,8 +39,8 @@ export default function About() {
       </motion.section>
 
       {/* Skills Section */}
-      <motion.section className="mb-16" {...fadeIn} transition={{ delay: 0.2 }}>
-        <motion.h2 className="section-title" {...fadeInUp}>
+      <motion.section className="skill-section mb-16" {...fadeIn} transition={{ delay: 0.2 }}>
+        <motion.h2 className="section-title font-[montserrat]" {...fadeInUp}>
           Skills
         </motion.h2>
         <motion.div
@@ -47,81 +49,35 @@ export default function About() {
           initial="initial"
           animate="animate"
         >
-          <motion.div
-            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHover}
-          >
-            <FaCode className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
-            <h3 className="text-lg lg:text-xl font-semibold mb-2">Frontend</h3>
-            <ul className="text-secondary space-y-2 text-sm lg:text-lg">
-              <li>HTML / CSS</li>
-              <li>JavaScript / TypeScript</li>
-              <li>React.js / Next.js</li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHover}
-          >
-            <FaGraduationCap className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Basic</h3>
-            <ul className="text-secondary space-y-2">
-              <li>Java</li>
-              <li>Python</li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHover}
-          >
-            <FaGraduationCap className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Worked with</h3>
-            <ul className="text-secondary space-y-2">
-              <li>Tailwind / Bootstrap</li>
-              <li>Material-UI / Radix-UI</li>
-              <li>Shadcn-UI / Hero-UI</li>
-              <li>Motion / GSAP</li>
-              
-            </ul>
-          </motion.div>
-
-          <motion.div
-            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHover}
-          >
-            <FaGraduationCap className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Tools & Other</h3>
-            <ul className="text-secondary space-y-2">
-              <li>Git / GitHub</li>
-              <li>Figma</li>
-              <li>D3 chart</li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHover}
-          >
-            <FaLaptopCode className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Backend</h3>
-            <ul className="text-secondary space-y-2">
-              <li>Haven&apos;t Mastery in technology</li>
-              <li>Prisma / MongoDB</li>
-            </ul>
-          </motion.div>
+          {skillsData.map((skill) => {
+            const Icon = skill.icon;
+            return (
+              <motion.div
+                key={skill.id}
+                className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
+                variants={fadeInUp}
+                {...cardHover}
+              >
+                <Icon className="h-7 w-7 lg:h-8 lg:w-8 text-primary mb-4" />
+                <h3
+                  className={`text-lg lg:text-xl font-semibold mb-2 ${skill.font}`}
+                >
+                  {skill.tech}
+                </h3>
+                <ul className="text-secondary space-y-2 text-sm lg:text-lg font-[delius] font-bold">
+                  {skill.items.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </motion.section>
 
       {/* Experience Section */}
-      <motion.section className="mb-16" {...fadeIn} transition={{ delay: 0.4 }}>
-        <motion.h2 className="section-title" {...fadeInUp}>
+      <motion.section className="experience-section mb-16" {...fadeIn} transition={{ delay: 0.4 }}>
+        <motion.h2 className="section-title font-[montserrat]" {...fadeInUp}>
           Experience
         </motion.h2>
         <motion.div
@@ -130,35 +86,30 @@ export default function About() {
           initial="initial"
           animate="animate"
         >
-          <motion.div
-            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHoverSmall}
-          >
-            <h3 className="text-lg lg:text-xl font-semibold mb-2">Frontend Internship</h3>
-            <p className="text-primary mb-2">Techreale • Jan 2024 - May 2024</p>
-            <ul className="text-secondary text-sm lg:text-lg list-disc list-inside space-y-2">
-              <li>
-                Led development of multiple web applications using Reactjs.
-              </li>
-              <li>
-                Mentored by senior developers and conducted code reviews with
-                them.
-              </li>
-              <li>Work with RESTful APIs. </li>
-              <li>
-                Built responsive user interfaces with modern JavaScript
-                frameworks
-              </li>
-              <li>Experienced Optimized & improving performance.</li>
-            </ul>
-          </motion.div>
+          {experience.map((item) => (
+            <motion.div
+              key={item.id}
+              className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
+              variants={fadeInUp}
+              {...cardHoverSmall}
+            >
+              <h3 className="text-lg lg:text-xl font-semibold mb-2 font-[montserrat]">
+                {item.title}
+              </h3>
+              <p className="text-primary mb-2 font-[delius] font-semibold">{item.company}</p>
+              <ul className="text-secondary text-sm lg:text-lg list-disc list-inside space-y-2">
+                {item.ul.map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.section>
 
       {/* Education Section */}
-      <motion.section {...fadeIn} transition={{ delay: 0.6 }}>
-        <motion.h2 className="section-title" {...fadeInUp}>
+      <motion.section className="education-section" {...fadeIn} transition={{ delay: 0.6 }}>
+        <motion.h2 className="section-title font-[montserrat]" {...fadeInUp}>
           Education
         </motion.h2>
         <motion.div
@@ -167,20 +118,26 @@ export default function About() {
           initial="initial"
           animate="animate"
         >
-          <motion.div
-            className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHoverSmall}
-          >
-            <h3 className="text-xl font-semibold mb-2">Computer Engineering</h3>
-            <p className="text-primary mb-2">GEC Dahod • 2020 - 2024</p>
-            <p className="text-secondary">
-              Graduated with honors. Focused on software engineering and web
-              development.
-            </p>
-          </motion.div>
+          {education.map((item) => (
+            <motion.div
+              key={item.id}
+              className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md"
+              variants={fadeInUp}
+              {...cardHoverSmall}
+            >
+              <h3 className="text-xl font-semibold mb-2 font-[montserrat]">
+                {item.title}
+              </h3>
+              <p className="text-primary mb-2 font-[delius] font-semibold">{item.college}</p>
+              <ul className="text-secondary text-sm lg:text-lg list-disc list-inside space-y-2">
+                {item.ul.map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.section>
-    </div>
+    </section>
   );
 }

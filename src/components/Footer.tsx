@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
+import { useEffect, useState, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
-import { FaGithubSquare, FaLinkedin, FaPhoneSquare } from "react-icons/fa";
+import Link from "next/link";
 import { fadeInUp } from "@/utils/animation";
+import { FaGithubSquare, FaLinkedin, FaPhoneSquare } from "react-icons/fa";
 
 const Footer = () => {
   const pathName = usePathname();
@@ -99,14 +99,31 @@ const Footer = () => {
     }
   };
 
+  const socialLinks = [
+    {
+      icon: FaGithubSquare,
+      href: "https://github.com/rickypatel18",
+      label: "GitHub",
+    },
+    {
+      icon: FaLinkedin,
+      href: "https://linkedin.com/in/ricky-patel-b91727278",
+      label: "LinkedIn",
+    },
+    {
+      icon: FaPhoneSquare,
+      href: `https://wa.me/${phoneNumber.replace(/\D/g, "")}`,
+      label: "WhatsApp",
+    },
+  ];
+
   return (
     <footer
       ref={footerRef}
-      className="relative bg-white text-black dark:bg-black dark:text-white my-0 overflow-hidden px-0 cursor-none "
+      className="footer-wrapper relative bg-white text-black dark:bg-black dark:text-white my-0 overflow-hidden px-0 cursor-none "
     >
       <div className="px-4 ">
         <div className="max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0  ">
-          
           {isInside && (
             <motion.div
               className="fixed top-0 left-0 w-5 h-5 bg-black/30 dark:bg-white/10 backdrop-blur-2xl rounded-full pointer-events-none z-50 cursor-none"
@@ -117,7 +134,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-10 text-center relative z-10">
             <motion.p
-              className="text-sm md:text-base font-bold text-gray-400"
+              className="text-sm md:text-base font-bold text-gray-400 "
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -128,17 +145,19 @@ const Footer = () => {
 
             <motion.div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10">
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-5">
-                <h3 className=" text-xl text-primary">Location</h3>
-                <span className="flex flex-col justify-start items-start font-mono text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold text-start">
+                <h3 className=" text-xl text-primary font-[montserrat] font-semibold">
+                  Location
+                </h3>
+                <span className="flex flex-col justify-start items-start text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold text-start">
                   <motion.p
-                    className=" text-gray-600 dark:text-gray-300 transition-colors"
+                    className=" text-gray-600 dark:text-gray-300 transition-colors font-[delius] font-bold"
                     {...animations[1 % animations.length]}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     Undach, Antaliya
                   </motion.p>
                   <motion.p
-                    className=" text-gray-600 dark:text-gray-300 transition-colors"
+                    className=" text-gray-600 dark:text-gray-300 transition-colors font-[delius] font-bold"
                     {...animations[1 % animations.length]}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
@@ -147,10 +166,12 @@ const Footer = () => {
                 </span>
               </div>
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-5">
-                <h3 className=" text-xl text-primary">Profiles </h3>
-                <span className="flex flex-col justify-start items-start  font-mono text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold text-start">
+                <h3 className=" text-xl text-primary font-[montserrat] font-semibold">
+                  Profiles{" "}
+                </h3>
+                <span className="flex flex-col justify-start items-start font-[delius] font-bold text-lg md:text-xl lg:text-2xl 2xl:text-3xl text-start">
                   <motion.a
-                    href="https://github.com"
+                    href="https://github.com/rickypatel18"
                     target="_blank"
                     rel="noopener noreferrer"
                     className=" text-gray-600  dark:text-gray-300  transition-colors"
@@ -160,7 +181,7 @@ const Footer = () => {
                     GitHub
                   </motion.a>
                   <motion.a
-                    href="https://linkedin.com"
+                    href="https://linkedin.com/in/ricky-patel-b91727278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className=" text-gray-600  dark:text-gray-300  transition-colors"
@@ -172,8 +193,10 @@ const Footer = () => {
                 </span>
               </div>
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-5">
-                <h3 className=" text-xl text-primary">Contact</h3>
-                <span className="flex flex-col justify-start items-start font-mono text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold">
+                <h3 className=" text-xl text-primary font-[montserrat] font-semibold">
+                  Contact
+                </h3>
+                <span className="flex flex-col justify-start items-start font-[delius] font-bold text-lg md:text-xl lg:text-2xl 2xl:text-3xl">
                   <motion.a
                     href={`mailto:${email}`}
                     onClick={(e) => {
@@ -223,7 +246,7 @@ const Footer = () => {
             </motion.div>
 
             <motion.div
-              className="flex-j space-x-5 "
+              className="flex justify-center space-x-5"
               {...fadeInUp}
               variants={fadeInUp}
               initial="initial"
@@ -231,36 +254,49 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              {[FaGithubSquare, FaLinkedin, FaPhoneSquare].map((Icon, i) => (
-                <motion.a
-                  key={i}
-                  href="#"
-                  className="relative text-3xl p-2 rounded-full bg-white/5 backdrop-blur-sm "
-                  whileHover={{
-                    scale: 1.2,
-                    rotate: [0, -15, 15, 0],
-                    background: "linear-gradient(45deg, #ff4500, #28e98c)",
-                  }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{
-                    rotate: { type: "tween", duration: 0.6, ease: "easeInOut" },
-                    scale: { type: "spring", stiffness: 300 },
-                  }}
-                >
-                  <Icon className="text-black dark:text-current w-5 h-5" />
+              {socialLinks.map((social, i) => {
+                const Icon = social.icon;
+                return (
                   <motion.div
-                    className="absolute inset-0 rounded-full border-2 border-ternary/50 opacity-0"
-                    animate={{
-                      opacity: [0, 1, 0],
-                      scale: i * 0.4,
+                    key={i}
+                    whileHover={{
+                      scale: 1.2,
+                      rotate: [0, -15, 15, 0],
                     }}
+                    whileTap={{ scale: 0.9 }}
                     transition={{
-                      duration: 3,
-                      repeat: Infinity,
+                      rotate: {
+                        type: "tween",
+                        duration: 0.6,
+                        ease: "easeInOut",
+                      },
+                      scale: { type: "spring", stiffness: 300 },
                     }}
-                  />
-                </motion.a>
-              ))}
+                  >
+                    <Link
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative text-3xl p-2 rounded-full bg-white/5 backdrop-blur-sm flex items-center justify-center"
+                      aria-label={social.label}
+                    >
+                      <Icon className="text-black dark:text-white w-5 h-5" />
+                      <motion.div
+                        className="absolute inset-0 rounded-full border-2 border-ternary/50 opacity-0"
+                        animate={{
+                          opacity: [0, 1, 0],
+                          scale: i * 0.4,
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          delay: i * 0.3,
+                        }}
+                      />
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </motion.div>
 
             <motion.div
@@ -293,9 +329,8 @@ const Footer = () => {
               </div>
             </motion.div>
 
-            <div className="text-xs md:text-sm text-gray-600 z-10">
-              © {new Date().getFullYear()} Ricky. All rights
-              reserved.
+            <div className="text-xs md:text-sm text-gray-600 z-10 font-[delius] font-bold pb-2">
+              © {new Date().getFullYear()} Ricky. All rights reserved.
             </div>
           </div>
 
