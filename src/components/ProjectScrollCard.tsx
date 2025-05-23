@@ -6,13 +6,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const ProjectScrollCard = () => {
-  const sectionCount = 5;
-  const baseWidth = "w-full";
-  const widthDecrement = "w-5/6";
-
   return (
     <section className="project-scroll-section bg-white dark:bg-black pt-5 lg:pt-10 px-0">
-      <div className=" px-4 ">
+      <div className="px-4">
         <div className="max-w-7xl mx-auto px-0 xl:px-4 2xl:px-0">
           <div className="mb-15 bg-white dark:bg-black flex items-center justify-center">
             <motion.h2
@@ -33,17 +29,7 @@ const ProjectScrollCard = () => {
                   width: `${100 - Number(item.id) * 2}%`,
                   marginTop: "10px",
                 }}
-                className={`${
-                  item.bgColor
-                } sticky h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] overflow-hidden rounded-lg flex items-center justify-center mx-auto transition-all duration-300
-             ${
-               Number(item.id) == 1
-                 ? baseWidth
-                 : `${widthDecrement}  ml-[${
-                     (100 / sectionCount) * Number(item.id)
-                   }%]`
-             } 
-             `}
+                className={`${item.bgColor} lg:border-[0.5px] border-secondary sticky h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] overflow-hidden rounded-lg flex items-center justify-center mx-auto transition-all duration-300`}
               >
                 <div className="absolute top-0 bottom-0 w-full h-full">
                   {/* eslint-disable-next-line @next/next/no-img-element */}

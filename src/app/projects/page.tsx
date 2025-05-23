@@ -123,7 +123,7 @@ export default function Projects() {
                       {project.technologies.map((tech, techIndex) => (
                         <motion.span
                           key={techIndex}
-                          className="py-1 px-3 bg-primary/10 text-primary rounded-full text-sm font-[delius]"
+                          className="py-1 px-3 bg-primary/10 text-primary rounded-full text-sm font-[delius] font-bold"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
                         >

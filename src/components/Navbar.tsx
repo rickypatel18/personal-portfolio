@@ -118,11 +118,10 @@ export default function Navbar() {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center">
-              {" "}
               {/* Wrapper for mobile button */}
               <motion.button
                 onClick={toggleTheme}
-                className="p-2 mr-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
+                className=" p-1 sm:p-2 mr-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
                 whileHover={{ scale: 1.1, rotate: 15 }}
                 whileTap={{ scale: 0.9 }}
                 title={
@@ -132,14 +131,14 @@ export default function Navbar() {
                 }
               >
                 {theme === "dark" ? (
-                  <SunIcon className="h-5 w-5 text-yellow-400" />
+                  <SunIcon className="h-5 w-5 text-yellow-400"/>
                 ) : (
-                  <MoonIcon className="h-5 w-5 text-gray-700 dark:text-gray-600" />
+                  <MoonIcon className="h-5 w-5 text-gray-700 dark:text-gray-600"/>
                 )}
               </motion.button>
 
               <motion.button
-                className="p-1.5 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
+                className="p-1 sm:p-1.5 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-950 transition-colors"
                 onClick={toggleMobileMenu}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -147,9 +146,9 @@ export default function Navbar() {
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? (
-                  <XMarkIcon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+                  <XMarkIcon className="h-6 w-6 text-gray-700 dark:text-gray-300"/>
                 ) : (
-                  <Bars3Icon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+                  <Bars3Icon className="h-6 w-6 text-gray-700 dark:text-gray-300"/>
                 )}
               </motion.button>
             </div>
@@ -165,7 +164,7 @@ export default function Navbar() {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="md:hidden"
               >
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
+                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   {/* Tailwind's recommended mobile menu padding */}
                   {menuItems.map((item, index) => {
                     const isActive =
