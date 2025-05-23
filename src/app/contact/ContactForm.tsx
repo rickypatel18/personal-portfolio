@@ -182,7 +182,7 @@ export default function ContactForm() {
 
         {/* Contact Form */}
         <motion.div
-          className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg  "
+          className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg"
           {...slideInRight}
         >
           <motion.form

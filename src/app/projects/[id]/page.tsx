@@ -85,11 +85,11 @@ const Page = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-secondary hover:text-primary transition-colors" // Used items-center
+                    className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
                     whileHover={{ x: 5 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <FaGithub className="h-5 w-5" />
+                    <FaGithub className="h-5 w-5"/>
                     <span>Code</span>
                   </motion.a>
                 </motion.div>

@@ -32,12 +32,14 @@ export interface AboutSkillData{
   items:string[],
   font:string
 }
+
 export interface AboutExperience{
   id:number,
   title:string,
   company:string,
   ul:string[],
 }
+
 export interface AboutEducation{
   id:number,
   title:string,

@@ -149,7 +149,7 @@ export default function Projects() {
                           e.stopPropagation();
                         }}
                       >
-                        <FaGithub className="h-5 w-5" />
+                        <FaGithub className="h-5 w-5"/>
                         <span>Code</span>
                       </motion.a>
                     </motion.div>

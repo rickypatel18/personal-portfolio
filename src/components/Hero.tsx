@@ -211,7 +211,7 @@ export default function Hero() {
                     scale: { type: "spring", stiffness: 300 },
                   }}
                 >
-                  <Icon className="text-current w-5 h-5" />
+                  <Icon className="text-current w-5 h-5"/>
                   <motion.div
                     className="absolute inset-0 rounded-full border-2 border-ternary/30 opacity-0"
                     animate={{
@@ -237,7 +237,7 @@ export default function Hero() {
                 <span className="z-10 text-sm lg:text-lg">View Projects</span>
                 <motion.div className="absolute inset-0 bg-green-400 opacity-0 hover:opacity-100 transition-opacity"/>
                 <motion.div
-                  className="absolute top-[1px] h-[1px] left-0 w-full  bg-gradient-to-r from-transparent via-white to-transparent"
+                  className="absolute top-[1px] h-[1px] left-0 w-full bg-gradient-to-r from-transparent via-white to-transparent"
                   animate={{ x: ["-100%", "100%"] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 2 }}
                 />

@@ -1,11 +1,15 @@
 import Hero from "@/components/Hero";
 import FallingText from "@/components/FallingText";
 import ProjectScrollCard from "@/components/ProjectScrollCard";
+// import { Suspense } from "react";
+// import Loading from "@/components/Loading";
 
 export default function Home() {
   return (
     <section className="main-layout-page z-70">
       <Hero />
+      {/* <Suspense fallback={<Loading/>}>
+      </Suspense> */}
       <ProjectScrollCard />
       <div className="skill-component-section">
         <FallingText

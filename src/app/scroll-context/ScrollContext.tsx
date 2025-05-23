@@ -26,7 +26,7 @@ const ScrollContext = ({ children }: ScrollContextProps) => {
       duration: 1.5,
       lerp: 0.1,
       smoothWheel: true,
-      infinite: false, // Infinite scrolling
+      infinite: false,
       gestureOrientation: "vertical",
       // touchMultiplier: 2,
     });

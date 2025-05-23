@@ -14,7 +14,7 @@ const CV_PUBLIC_PATH = "/dummy.pdf";
 export default function CVPage() {
   return (
     <section className="cv-wrapper flex flex-col gap-10 px-4 pt-10 md:py-16 min-h-screen items-center bg-white dark:bg-black container max-w-7xl mx-auto">
-      <header className="text-center ">
+      <header className="text-center">
         <h1 className="text-page-heading font-bold font-[montserrat] text-gray-900 dark:text-white">
           My Curriculum Vitae
         </h1>
@@ -27,7 +27,7 @@ export default function CVPage() {
       <Link
         href={CV_PUBLIC_PATH}
         download="Ricky_Patel_CV"
-        className="text-sm md:text-[16px] xl:text-lg w-fit  text-white md:w-auto md:px-6 md:py-2 relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-primary/90 hover:bg-primary  shadow-2xl hover:shadow-primary/30 transition-all"
+        className="text-sm md:text-[16px] xl:text-lg w-fit text-white md:w-auto md:px-6 md:py-2 relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-primary/90 hover:bg-primary  shadow-2xl hover:shadow-primary/30 transition-all"
       >
         <ClientAnimationWrapper>Download CV</ClientAnimationWrapper>
       </Link>
@@ -60,7 +60,7 @@ export default function CVPage() {
         </iframe>
       </main>
 
-      <footer className=" text-center flex flex-col gap-5">
+      <footer className="text-center flex flex-col gap-5">
         <p className="text-sm lg:text-[16px] text-gray-600 dark:text-gray-400 lg:text-md font-[delius] font-bold">
           I&apos;ve just updated my resume! It now includes my skills,
           education, project experience, details about my previous employers,

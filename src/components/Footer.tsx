@@ -222,7 +222,7 @@ const Footer = () => {
                       copyToClipboard(
                         phoneNumber, // 1. Text to copy
                         "phone", // 2. Type: "phone"
-                        `https://wa.me/${phoneNumber.replace(/\D/g, "")}` // 3. Redirect URL (optional)
+                        `https://wa.me/${phoneNumber.replace(/\D/g, "")}`
                       );
                     }}
                     className="relative text-gray-600  dark:text-gray-300 transition-colors cursor-pointer"

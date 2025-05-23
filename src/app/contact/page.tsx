@@ -40,13 +40,13 @@ const Contact = () => {
         </motion.div>
 
         <motion.div
-          className="relative inline-block group "
+          className="relative inline-block group"
           initial="initial"
           whileHover="hover"
         >
           <Link
             href={`mailto:${email.toLowerCase()}`}
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold tracking-tighter break-all relative z-10 font-[delius] font-bold"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-tighter break-all relative z-10 font-[delius] font-bold"
             aria-label={`Email ${email}`}
           >
             <>
@@ -76,14 +76,14 @@ const Contact = () => {
       {/* Animated background text */}
       <div className="absolute inset-0 flex items-center justify-center text-gray-500 select-none z-0 overflow-hidden">
         <motion.span
-          className="text-[10vh] md:text-[20vh] lg:text-[25vh] xl:text-[30vh] 2xl:text-[40vh] font-black  leading-none tracking-tighter opacity-5 pointer-events-none whitespace-nowrap"
+          className="text-[10vh] md:text-[20vh] lg:text-[25vh] xl:text-[30vh] 2xl:text-[40vh] font-black leading-none tracking-tighter opacity-5 pointer-events-none whitespace-nowrap"
           animate={controls}
           initial={{ x: "0%" }}
         >
           {repeatedText}
         </motion.span>
       </div>
-      <section className="contact-form-wrapper relative z-20 mt-2 md:mt-5 lg:mt-10 ">
+      <section className="contact-form-wrapper relative z-20 mt-2 md:mt-5 lg:mt-10">
         <ContactForm />
       </section>
     </section>
