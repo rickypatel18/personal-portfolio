@@ -151,14 +151,13 @@ export const projects: Project[] = [
       "Fully functional blog uploading website built with Next.js, Tailwind CSS, and sanity studio.",
     fullDescription:
       "This is a fully operational blogging platform that allows users to create an account either manually or through GitHub, utilizing next-auth for authentication. Upon successful registration, users are redirected to the homepage where they can view their list of blog cards. By clicking the upload button, users can create and publish a new blog using the Sanity API. A unique feature of this web application is the ability to track the number of views for each blog post. The platform is built using Next.js, Tailwind CSS, the Sanity API, and next-auth services.",
-    technologies: ["React.js", "JavaScript", "Tailwind CSS", "Cart", "Static"],
+    technologies: ["React.js", "JavaScript", "Tailwind CSS",  "Sanity Studio"],
     githubLink: "https://github.com",
-    image: "/new-project/p2.png",
+    image: "/new-project/blog.png",
     otherImages: [
       {
-        oi1: "/new-project/p2-1.png",
-        oi2: "/new-project/p2-2.png",
-        oi3: "/new-project/p2-3.png",
+        oi1: "/new-project/blog-1.png",
+        oi2: "/new-project/blog-2.png",
       },
     ],
   },
