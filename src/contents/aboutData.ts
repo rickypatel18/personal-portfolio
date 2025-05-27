@@ -48,13 +48,20 @@ export const skillsData: AboutSkillData[] = [
     items: ["Haven't Mastery in technology"],
     font: "font-[montserrat]",
   },
+  {
+    id: 7,
+    tech: "Database",
+    icon: FaLaptopCode,
+    items: ["Prisma", "MongoDB", "MySQL"],
+    font: "font-[montserrat]",
+  },
 ];
 
 export const experience: AboutExperience[] = [
   {
     id: 1,
     title: "Frontend Internship",
-    company: "Techreale • Jan 2024 - May 2024",
+    company: "Techreale • Jan 2024 - April 2024",
     ul: [
       "Led development of multiple web applications using Reactjs.",
       "Mentored by senior developers and conducted code reviews with them.",
@@ -71,7 +78,7 @@ export const education: AboutEducation[] = [
     title: "Computer Engineering",
     college: "GEC Dahod • 2020 - 2024",
     ul: [
-      "Graduated with honors. Focused on software engineering and web development.",
+      "Graduated with honors. Focused on software engineering and web development.","I wanted to do my post-graduation in AI/ML.",
     ],
   },
 ];
