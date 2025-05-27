@@ -255,7 +255,7 @@ export default function ContactForm() {
                   ease: "easeInOut",
                 }}
               />
-              <div className="flex items-center gap-2 lg:gap-5relative z-10">
+              <div className="flex items-center gap-2 lg:gap-5 relative z-10">
                 <motion.div
                   className="p-4 rounded-xl bg-blue-500/60 text-white shadow-lg"
                   whileHover={{ rotate: -15, scale: 1.1 }}
