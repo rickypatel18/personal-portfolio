@@ -352,7 +352,7 @@ export default function ContactForm() {
             />
 
             <motion.h3
-              className="text-2xl lg:text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-ternary font-[montserrat]"
+              className="text-2xl lg:text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-ternary font-[montserrat]"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
