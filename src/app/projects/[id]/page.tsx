@@ -3,10 +3,10 @@
 import React from "react";
 import { projects } from "@/contents/projects";
 import { notFound, useParams } from "next/navigation";
-import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import { IoChevronBackCircle } from "react-icons/io5";
+import { FaGithub } from "react-icons/fa";
 
 // Assuming scrollUpRotate and simpleFadeInUp are defined here or imported
 const scrollUpRotate = {
@@ -53,7 +53,7 @@ const Page = () => {
     router.back();
   };
 
-  const viewportConfig = { once: true, amount: 0.01 }; // Animate once, when 20% is visible
+  const viewportConfig = { once: true, amount: 0.01 }; // Animate once, when 10% is visible
 
   return (
     <section className="project-detail-card px-4 py-10 min-h-screen bg-white dark:bg-black overflow-hidden">

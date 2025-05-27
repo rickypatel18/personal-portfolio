@@ -70,8 +70,6 @@ export default function ContactForm() {
       setStatus("idle");
       return;
     }
-
-    // If validation is successful, proceed with submission
     setStatus("loading");
 
     try {
@@ -128,7 +126,7 @@ export default function ContactForm() {
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className={`absolute rounded-full bg-secondary/10 `}
+            className={`absolute rounded-full bg-secondary/10`}
             style={{
               width: `${Math.random() * 200 + 100}px`,
               height: `${Math.random() * 200 + 100}px`,
@@ -190,7 +188,7 @@ export default function ContactForm() {
             variants={staggerContainer}
           >
             <motion.div
-              className="relative bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden"
+              className="relative bg-white dark:bg-gray-900 p-5 lg:p-6 rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden"
               variants={staggerItem}
               whileHover={{
                 y: -5,
@@ -214,7 +212,7 @@ export default function ContactForm() {
               />
               <div className="flex items-center gap-2 lg:gap-5 relative z-10">
                 <motion.div
-                  className="p-4 rounded-xl bg-red-500/60 text-white shadow-lg"
+                  className="p-3 lg:p-4 rounded-xl bg-red-500/60 text-white"
                   whileHover={{ rotate: 15, scale: 1.1 }}
                   transition={{ type: "spring" }}
                 >
@@ -233,7 +231,7 @@ export default function ContactForm() {
             </motion.div>
 
             <motion.div
-              className="relative bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden"
+              className="relative bg-white dark:bg-gray-900 p-5 lg:p-6 rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden"
               variants={staggerItem}
               whileHover={{
                 y: -5,
@@ -257,7 +255,7 @@ export default function ContactForm() {
               />
               <div className="flex items-center gap-2 lg:gap-5 relative z-10">
                 <motion.div
-                  className="p-4 rounded-xl bg-blue-500/60 text-white shadow-lg"
+                  className="p-3 lg:p-4 rounded-xl bg-blue-500/60 text-white"
                   whileHover={{ rotate: -15, scale: 1.1 }}
                   transition={{ type: "spring" }}
                 >
@@ -276,7 +274,7 @@ export default function ContactForm() {
             </motion.div>
 
             <motion.div
-              className="relative bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden"
+              className="relative bg-white dark:bg-gray-900 p-5 lg:p-6 rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden"
               variants={staggerItem}
               whileHover={{
                 y: -5,
@@ -299,7 +297,7 @@ export default function ContactForm() {
               />
               <div className="flex items-center gap-2 lg:gap-5 relative z-10">
                 <motion.div
-                  className="p-4 rounded-xl bg-green-500/60 text-white shadow-lg"
+                  className="p-3 lg:p-4 rounded-xl bg-green-500/60 text-white"
                   whileHover={{ rotate: 15, scale: 1.1 }}
                   transition={{ type: "spring" }}
                 >
@@ -334,7 +332,7 @@ export default function ContactForm() {
           />
 
           <motion.div
-            className="bg-white dark:bg-gray-900 p-8 md:p-10 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 relative overflow-hidden"
+            className="bg-white dark:bg-gray-900 p-8 md:p-10 rounded-2xl border border-gray-100 dark:border-gray-800 relative overflow-hidden"
             whileHover={{
               boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
             }}
@@ -354,7 +352,7 @@ export default function ContactForm() {
             />
 
             <motion.h3
-              className="text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary font-[montserrat]"
+              className="text-2xl lg:text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-ternary font-[montserrat]"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
@@ -384,9 +382,9 @@ export default function ContactForm() {
                   placeholder="Enter your name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full pl-12 pr-4 py-4 rounded-xl border ${errors.name
-                      ? "border-red-500"
-                      : "border-gray-200 dark:border-gray-700"
+                  className={`w-full pl-12 pr-4 py-3 lg:py-4 rounded-xl border ${errors.name
+                    ? "border-red-500"
+                    : "border-gray-200 dark:border-gray-700"
                     } bg-white dark:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all peer`}
                 />
 
@@ -418,9 +416,9 @@ export default function ContactForm() {
                   placeholder="Enter your email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full pl-12 pr-4 py-4 rounded-xl border ${errors.email
-                      ? "border-red-500"
-                      : "border-gray-200 dark:border-gray-700"
+                  className={`w-full pl-12 pr-4 py-3 lg:py-4 rounded-xl border ${errors.email
+                    ? "border-red-500"
+                    : "border-gray-200 dark:border-gray-700"
                     } bg-white dark:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all peer`}
                 />
                 <AnimatePresence>
@@ -447,13 +445,13 @@ export default function ContactForm() {
                 <textarea
                   id="message"
                   name="message"
-                  placeholder="enter your message"
+                  placeholder="Enter your message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={3}
-                  className={`w-full pl-12 pr-4 py-4 rounded-xl border ${errors.message
-                      ? "border-red-500"
-                      : "border-gray-200 dark:border-gray-700"
+                  className={`w-full pl-12 pr-4 py-3 lg:py-4 rounded-xl border ${errors.message
+                    ? "border-red-500"
+                    : "border-gray-200 dark:border-gray-700"
                     } bg-white dark:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all`}
                 />
                 <AnimatePresence>
@@ -474,7 +472,7 @@ export default function ContactForm() {
                 <motion.button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full py-4 px-6 rounded-xl text-white font-bold 
+                  className="w-full py-3 lg:py-4 px-6 rounded-xl text-white font-bold 
                   shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group btn-gradgreen"
                   whileHover={{
                     scale: 1.02,

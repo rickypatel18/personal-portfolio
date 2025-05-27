@@ -1,6 +1,6 @@
+import { Metadata } from "next";
 import ClientAnimationWrapper from "@/components/ClientAnimationWrapper";
 import Link from "next/link";
-import { Metadata } from "next";
 // npm install file-loader
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default function CVPage() {
         <iframe
           src={`${CV_PUBLIC_PATH}#toolbar=0&navpanes=0&scrollbar=0&view=fitH`}
           title="Ricky Patel - Frontend Developer CV"
-          className="w-full h-[40vh] sm:h-[80vh] md:h-[100vh] "
+          className="w-full h-[40vh] sm:h-[80vh] md:h-[100vh]"
           loading="eager"
           aria-label="PDF document viewer"
         >

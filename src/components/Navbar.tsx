@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/app/context/ThemeContext";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   SunIcon,
   MoonIcon,
@@ -86,11 +86,10 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`transition-colors hover:text-primary dark:hover:text-primary ${
-                      isActive
+                    className={`transition-colors hover:text-primary dark:hover:text-primary ${isActive
                         ? "font-semibold text-primary"
                         : "text-gray-700 dark:text-gray-300"
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </Link>
@@ -131,9 +130,9 @@ export default function Navbar() {
                 }
               >
                 {theme === "dark" ? (
-                  <SunIcon className="h-5 w-5 text-yellow-400"/>
+                  <SunIcon className="h-5 w-5 text-yellow-400" />
                 ) : (
-                  <MoonIcon className="h-5 w-5 text-gray-700 dark:text-gray-600"/>
+                  <MoonIcon className="h-5 w-5 text-gray-700 dark:text-gray-600" />
                 )}
               </motion.button>
 
@@ -146,9 +145,9 @@ export default function Navbar() {
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? (
-                  <XMarkIcon className="h-6 w-6 text-gray-700 dark:text-gray-300"/>
+                  <XMarkIcon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
                 ) : (
-                  <Bars3Icon className="h-6 w-6 text-gray-700 dark:text-gray-300"/>
+                  <Bars3Icon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
                 )}
               </motion.button>
             </div>
@@ -180,11 +179,10 @@ export default function Navbar() {
                       >
                         <Link
                           href={item.href}
-                          className={`block px-3 py-2 rounded-md text-base font-medium hover:text-primary dark:hover:text-primary hover:bg-gray-300 dark:hover:bg-gray-700 ${
-                            isActive
+                          className={`block px-3 py-2 rounded-md text-base font-medium hover:text-primary dark:hover:text-primary hover:bg-gray-300 dark:hover:bg-gray-700 ${isActive
                               ? "font-semibold text-primary bg-gray-300 dark:bg-gray-700"
                               : "text-gray-700 dark:text-gray-300"
-                          }`}
+                            }`}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {item.label}
@@ -192,7 +190,7 @@ export default function Navbar() {
                       </motion.div>
                     );
                   })}
-                  
+
                 </div>
               </motion.div>
             )}

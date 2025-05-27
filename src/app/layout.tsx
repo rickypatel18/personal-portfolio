@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
+import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollContext from "./scroll-context/ScrollContext";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import { Delius, Montserrat } from "next/font/google";
-import "./globals.css";
 import Loading from "./Loading";
+import { Delius, Montserrat } from "next/font/google";
 
 const delius = Delius({
   variable: "--font-delius",
@@ -51,7 +51,7 @@ export default function RootLayout({
       <body
         className={`bg-white transition-colors dark:bg-black dark:text-white ${delius.variable} ${montserrat.variable} font-sans`}
       >
-        <Loading/>
+        <Loading />
         <ThemeProvider>
           <ScrollContext>
             <Navbar />

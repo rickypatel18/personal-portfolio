@@ -1,5 +1,7 @@
 "use client";
 
+import { education, experience, skillsData } from "@/contents/aboutData";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import {
   fadeInUp,
@@ -9,8 +11,6 @@ import {
   cardHoverSmall,
   cardHover,
 } from "../../utils/animation";
-import { education, experience, skillsData } from "@/contents/aboutData";
-import { useRef } from "react";
 
 export default function About() {
   const constraintsRef = useRef(null);
@@ -60,7 +60,7 @@ export default function About() {
             return (
               <motion.div
                 key={skill.id}
-                className="bg-gray-100 dark:bg-gray-950 p-6 rounded-lg shadow-md "
+                className="bg-gray-100 dark:bg-gray-950 p-4 lg:p-6 rounded-lg shadow-md"
                 variants={fadeInUp}
                 {...cardHover}
               >

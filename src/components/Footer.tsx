@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { motion, useAnimation } from "framer-motion";
 import { fadeInUp } from "@/utils/animation";
 import { FaGithubSquare, FaLinkedin, FaPhoneSquare } from "react-icons/fa";
 
@@ -58,7 +58,6 @@ const Footer = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
-    // { href: "/blogs", label: "Blogs" },
     { href: "/cv", label: "CV" },
     { href: "/contact", label: "Contact" },
   ];
@@ -134,7 +133,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-10 text-center relative z-10">
             <motion.p
-              className="text-sm md:text-base font-bold text-gray-400"
+              className="text-sm md:text-base font-bold text-gray-400 pt-5"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -216,12 +215,12 @@ const Footer = () => {
                   </motion.a>
 
                   <motion.a
-                    href={`https://wa.me/${phoneNumber.replace(/\D/g, "")}`} // This is the link if JS is disabled or copy fails and user clicks
+                    href={`https://wa.me/${phoneNumber.replace(/\D/g, "")}`}
                     onClick={(e) => {
-                      e.preventDefault(); // Prevent default navigation
+                      e.preventDefault();
                       copyToClipboard(
-                        phoneNumber, // 1. Text to copy
-                        "phone", // 2. Type: "phone"
+                        phoneNumber,
+                        "phone",
                         `https://wa.me/${phoneNumber.replace(/\D/g, "")}`
                       );
                     }}
@@ -230,7 +229,7 @@ const Footer = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     {phoneNumber}
-                    {copiedItem === "phone" && ( // This condition will now work
+                    {copiedItem === "phone" && (
                       <motion.span
                         initial={{ opacity: 0, y: 5 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -316,11 +315,10 @@ const Footer = () => {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`hover:text-primary transition-colors ${
-                        isActive
+                      className={`hover:text-primary transition-colors ${isActive
                           ? "font-semibold text-primary"
                           : "text-gray-700 dark:text-gray-300"
-                      }`}
+                        }`}
                     >
                       {item.label}
                     </Link>

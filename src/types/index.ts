@@ -1,7 +1,7 @@
 import { IconType } from "react-icons";
 
 export interface ProjectImages {
-   [key: string]: string; // Allows oi1, oi2, etc.
+  [key: string]: string; // Allows oi1, oi2, etc.
 }
 
 export interface Project {
@@ -25,24 +25,24 @@ export interface Blog {
   tasks: string[];
 }
 
-export interface AboutSkillData{
-  id:number,
-  tech:string,
-  icon:IconType,
-  items:string[],
-  font:string
+export interface AboutSkillData {
+  id: number,
+  tech: string,
+  icon: IconType,
+  items: string[],
+  font: string
 }
 
-export interface AboutExperience{
-  id:number,
-  title:string,
-  company:string,
-  ul:string[],
+export interface AboutExperience {
+  id: number,
+  title: string,
+  company: string,
+  ul: string[],
 }
 
-export interface AboutEducation{
-  id:number,
-  title:string,
-  college:string,
-  ul:string[],
+export interface AboutEducation {
+  id: number,
+  title: string,
+  college: string,
+  ul: string[],
 }

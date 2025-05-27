@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaGithubSquare, FaLinkedin, FaPhoneSquare } from "react-icons/fa";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import { useRef, MouseEvent, useEffect } from "react";
 import CustomCursorHero from "./CustomCursorHero";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { FaGithubSquare, FaLinkedin, FaPhoneSquare } from "react-icons/fa";
 
 const container = {
   hidden: { opacity: 0 },
@@ -177,7 +177,7 @@ export default function Hero() {
                 Crafting digital experiences with React & Next.js
               </span>
               <motion.div
-                className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent"
+                className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-ternary to-transparent"
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
@@ -211,7 +211,7 @@ export default function Hero() {
                     scale: { type: "spring", stiffness: 300 },
                   }}
                 >
-                  <Icon className="text-current w-5 h-5"/>
+                  <Icon className="text-current w-5 h-5" />
                   <motion.div
                     className="absolute inset-0 rounded-full border-2 border-ternary/30 opacity-0"
                     animate={{
@@ -235,7 +235,7 @@ export default function Hero() {
                 className="relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-primary/90 hover:bg-primary text-white shadow-2xl hover:shadow-primary/30 transition-all"
               >
                 <span className="z-10 text-sm lg:text-lg">View Projects</span>
-                <motion.div className="absolute inset-0 bg-green-400 opacity-0 hover:opacity-100 transition-opacity"/>
+                <motion.div className="absolute inset-0 bg-green-400 opacity-0 hover:opacity-100 transition-opacity" />
                 <motion.div
                   className="absolute top-[1px] h-[1px] left-0 w-full bg-gradient-to-r from-transparent via-white to-transparent"
                   animate={{ x: ["-100%", "100%"] }}
@@ -245,10 +245,9 @@ export default function Hero() {
 
               <Link
                 href="/resume"
-                className="relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-gray-200/90 dark:bg-gray-100/10 hover:bg-gray-300/90 dark:hover:bg-white/20 text-gray-800 dark:text-white shadow-2xl hover:shadow-secondary/30 transition-all"
-              >
+                className="relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-gray-200/90 dark:bg-gray-100/10 hover:bg-gray-300/90 dark:hover:bg-white/20 text-gray-800 dark:text-white shadow-2xl hover:shadow-secondary/30 transition-all">
                 <span className="z-10 text-sm lg:text-lg">View Resume</span>
-                <motion.div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity"/>
+                <motion.div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity" />
                 <motion.div
                   className="absolute bottom-[1px] h-[1px] left-0 w-full bg-gradient-to-r from-transparent via-white to-transparent"
                   animate={{ x: ["100%", "-100%"] }}

@@ -38,7 +38,7 @@ export const skillsData: AboutSkillData[] = [
     id: 5,
     tech: "Working with",
     icon: FaGraduationCap,
-    items: [ "Next.js", "React.js", "Tailwind CSS"],
+    items: ["Next.js", "React.js", "Tailwind CSS"],
     font: "font-[montserrat]",
   },
   {
@@ -78,7 +78,7 @@ export const education: AboutEducation[] = [
     title: "Computer Engineering",
     college: "GEC Dahod • 2020 - 2024",
     ul: [
-      "Graduated with honors. Focused on software engineering and web development.","I wanted to do my post-graduation in AI/ML.",
+      "Graduated with honors. Focused on software engineering and web development.", "I wanted to do my post-graduation in AI/ML.",
     ],
   },
 ];

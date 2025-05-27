@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-
 interface ContactRequestBody {
   name: string;
   email: string;

@@ -1,9 +1,9 @@
 "use client";
 
 import { projects } from "@/contents/projects";
-import { fadeInUp } from "@/utils/animation";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { fadeInUp } from "@/utils/animation";
 
 const ProjectScrollCard = () => {
   return (

@@ -28,7 +28,6 @@ const ScrollContext = ({ children }: ScrollContextProps) => {
       smoothWheel: true,
       infinite: false,
       gestureOrientation: "vertical",
-      // touchMultiplier: 2,
     });
     let rf;
 

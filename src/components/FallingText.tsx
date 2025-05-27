@@ -2,8 +2,8 @@
 
 import { useRef, useState, useEffect } from "react";
 import Matter from "matter-js";
-import { fadeInUp } from "@/utils/animation";
 import Link from "next/link";
+import { fadeInUp } from "@/utils/animation";
 import { motion } from "framer-motion";
 
 type FallingTextProps = {
@@ -14,7 +14,6 @@ type FallingTextProps = {
   backgroundColor?: string;
   wireframes?: boolean;
   gravity?: number;
-  //   fontSize?: string;
   mouseConstraintStiffness?: number;
 };
 
@@ -26,7 +25,7 @@ const FallingText = ({
   wireframes = false,
   gravity = 1,
   mouseConstraintStiffness = 0.2,
-}: //   fontSize = "1rem",
+}: 
   FallingTextProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);

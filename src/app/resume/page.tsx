@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
     Document,
     Page,
@@ -8,7 +9,6 @@ import {
     Text,
     View,
 } from "@react-pdf/renderer";
-import Link from "next/link";
 
 const name = "Ricky_Resume";
 
@@ -86,11 +86,11 @@ const Invoice = () => {
                     <Text style={{ fontWeight: "bold", borderBottomWidth: 1, borderBottomColor: 'black', borderBottomStyle: 'solid', fontSize: "13px", marginBottom: "3px" }}>INTERNSHIP</Text>
                     <View style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "flex-start", gap: "3px" }}>
                         <Text style={{ fontWeight: "bold", paddingLeft: "10px", fontSize: "11px" }}>Frontend Internship</Text>
-                        <Text style={{ paddingLeft: "20px", textAlign: 'justify' }}>During my 3 months <Text style={{fontWeight:"bold"}}>acadamic</Text> frontend internship at Techreale, I successfully completed various tasks
+                        <Text style={{ paddingLeft: "20px", textAlign: 'justify' }}>During my 3 months <Text style={{ fontWeight: "bold" }}>acadamic</Text> frontend internship at Techreale, I successfully completed various tasks
                             that allowed me to further develop my expertise in HTML, CSS, JS and REACT. During this I
                             created CareDac project with a team, Not only did I gain valuable knowledge in these areas, but
                             I also had the opportunity to enhance my skills.</Text>
-                        <Text style={{ paddingLeft: "20px", textAlign: 'justify', paddingTop:"5px" }}>During my previous traning at Elaunch solution,I have finally observed and learned how they code for production-ready applications. I have gained insights into project structure, various designs and animations. Additionally, I have learned Next.js, Framer Motion, and TypeScript at this company. I also had the opportunity to write code for a live project, although it was limited to a few sections and issues. Now, I am nearly fully adhering to the company&apos;s project structure.</Text>
+                        <Text style={{ paddingLeft: "20px", textAlign: 'justify', paddingTop: "5px" }}>During my previous traning at Elaunch solution,I have finally observed and learned how they code for production-ready applications. I have gained insights into project structure, various designs and animations. Additionally, I have learned Next.js, Framer Motion, and TypeScript at this company. I also had the opportunity to write code for a live project, although it was limited to a few sections and issues. Now, I am nearly fully adhering to the company&apos;s project structure.</Text>
                     </View>
                 </View>
 
@@ -125,7 +125,7 @@ const Invoice = () => {
 
             <div className="my-10 flex justify-center items-center">
                 <PDFDownloadLink document={<InvoicePdf />} fileName="Ricky_Resume.pdf">
-                    <button className="bg-primary flex items-center justify-center text-white px-5 py-2 rounded-full font-bold">
+                    <button className="text-sm md:text-[16px] xl:text-lg w-fit text-white md:w-auto md:px-6 md:py-2 relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-primary/90 hover:bg-primary  shadow-2xl hover:shadow-primary/30 transition-all">
                         Download
                     </button>
                 </PDFDownloadLink>
