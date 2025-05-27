@@ -288,3 +288,35 @@ export const cardHoverSmallNew = { // Assuming this is for experience/education 
     scale: 0.99,
   }
 };
+
+// utils/animation.js or at the top of your Page.jsx
+export const scrollUpRotate = {
+  hidden: { // State before it enters the viewport
+    opacity: 0,
+    y: 100, // Start 100px below its final position
+    rotateX: -45, // Rotate on the X-axis (like flipping up from the bottom)
+    // rotateZ: 15, // Alternatively, a slight Z-axis rotation
+    transformOrigin: "bottom center", // Crucial for the rotation to look right
+  },
+  visible: { // State when it's in view
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    // rotateZ: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.6, -0.05, 0.01, 0.99], // A nice easing function
+      // delay: 0.1 // Optional small delay
+    },
+  },
+};
+
+// A simpler fade-in for smaller elements or if rotation is too much
+export const simpleFadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};

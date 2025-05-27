@@ -92,33 +92,6 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    bgColor: "bg-yellow-200",
-    title: "Admin Dashboard",
-    description:
-      "A Dashboard to keep track of user data, orders, and products. Built with next.js and Rechart Library.",
-    fullDescription:
-      "This comprehensive admin dashboard, built with Next.js and TypeScript, delivers a robust solution for business analytics and management. Leveraging modern web technologies, the platform features interactive data visualization through Recharts, displaying key metrics like company revenue, profit trends, and performance indicators through dynamic line/bar charts. The interface includes sophisticated data tables built with TanStack Table, enabling efficient sorting, filtering, and pagination of business records. Security is prioritized with protected routing using Next-Auth, implementing role-based access control for admin and staff members. The application offers seamless user experience with automatic dark/light mode theming, responsive design across all devices, and optimized performance through Next.js server-side rendering. Additional features include real-time data updates via API integration, customizable dashboards with drag-and-drop widgets, form validations with Zod, and a library of reusable UI components from shadcn/ui. Designed with clean code architecture and TypeScript type safety, this dashboard serves as a powerful tool for business intelligence while maintaining excellent developer experience and scalability potential.",
-    technologies: [
-      "Next",
-      "HeroUI",
-      "Tailwind",
-      "Authentication",
-      "Rechart",
-      "Theme Based",
-      "Responsive",
-      "Typescript",
-    ],
-    githubLink: "https://github.com",
-    image: "/new-project/p3-1.png",
-    otherImages: [
-      {
-        oi1: "/new-project/p3-1.png",
-        oi2: "/new-project/p3-2.png",
-      },
-    ],
-  },
-  {
-    id: "6",
     bgColor: "bg-pink-200",
     title: "E-commerce Platform",
     description:
@@ -137,20 +110,52 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "7",
+    id: "6",
     bgColor: "bg-pink-200",
     title: "Blog Uploading website",
     description:
       "Fully functional blog uploading website built with Next.js, Tailwind CSS, and sanity studio.",
     fullDescription:
       "This is a fully operational blogging platform that allows users to create an account either manually or through GitHub, utilizing next-auth for authentication. Upon successful registration, users are redirected to the homepage where they can view their list of blog cards. By clicking the upload button, users can create and publish a new blog using the Sanity API. A unique feature of this web application is the ability to track the number of views for each blog post. The platform is built using Next.js, Tailwind CSS, the Sanity API, and next-auth services.",
-    technologies: ["React.js", "JavaScript", "Tailwind CSS", "Sanity Studio"],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Sanity Studio",
+      "Dynamic",
+    ],
     githubLink: "https://github.com",
     image: "/new-project/blog.png",
     otherImages: [
       {
         oi1: "/new-project/blog-1.png",
         oi2: "/new-project/blog-2.png",
+      },
+    ],
+  },
+  {
+    id: "7",
+    bgColor: "bg-yellow-200",
+    title: "Admin Dashboard",
+    description:
+      "A Dashboard to keep track of user data, orders, and products. Built with next.js and Rechart Library.",
+    fullDescription:
+      "This comprehensive admin dashboard, built with Next.js and TypeScript, delivers a robust solution for business analytics and management. Leveraging modern web technologies, the platform features interactive data visualization through Recharts, displaying key metrics like company revenue, profit trends, and performance indicators through dynamic line/bar charts. The interface includes sophisticated data tables built with TanStack Table, enabling efficient sorting, filtering, and pagination of business records. Security is prioritized with protected routing using Next-Auth, implementing role-based access control for admin and staff members. The application offers seamless user experience with automatic dark/light mode theming, responsive design across all devices, and optimized performance through Next.js server-side rendering. Additional features include real-time data updates via API integration, customizable dashboards with drag-and-drop widgets, form validations with Zod, and a library of reusable UI components from shadcn/ui. Designed with clean code architecture and TypeScript type safety, this dashboard serves as a powerful tool for business intelligence while maintaining excellent developer experience and scalability potential.",
+    technologies: [
+      "Next",
+      "HeroUI",
+      "Tailwind",
+      "Authentication",
+      "Rechart",
+      "Theme Based",
+      "Typescript",
+    ],
+    githubLink: "https://github.com",
+    image: "/new-project/p3-1.png",
+    otherImages: [
+      {
+        oi1: "/new-project/p3-1.png",
+        oi2: "/new-project/p3-2.png",
       },
     ],
   },

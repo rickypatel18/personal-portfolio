@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "View or download the Curriculum Vitae of Ricky Patel, detailing skills, experience, and professional background.",
 };
 
-const CV_PUBLIC_PATH = "/dummy.pdf";
+const CV_PUBLIC_PATH = "/Ricky_Resume.pdf";
 
 export default function CVPage() {
   return (
@@ -52,7 +52,7 @@ export default function CVPage() {
                 download="Ricky_Patel_CV"
                 className="text-blue-600 dark:text-blue-400 hover:underline font-semibold"
               >
-                download the PDF
+                download the PDF or go to &quot;/resume&quot; route
               </a>
               to view it.
             </p>
