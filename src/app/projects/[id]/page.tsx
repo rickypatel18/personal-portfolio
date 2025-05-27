@@ -6,7 +6,7 @@ import { notFound, useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-import { MdKeyboardBackspace } from "react-icons/md";
+import { IoChevronBackCircle } from "react-icons/io5";
 
 const Page = () => {
   const params = useParams();
@@ -27,9 +27,9 @@ const Page = () => {
       <div className="max-w-7xl mx-auto">
         <button
           onClick={handleBack}
-          className="mb-3 lg:mb-5 bg-gray-200 px-2 py-1 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+          className="mb-3 lg:mb-5  bg-gray-900/10 dark:bg-gray-50/10 px-2 py-1  text-gray-800 dark:text-gray-200 rounded transition-colors"
         >
-          <MdKeyboardBackspace className="w-6 h-5 lg:w-10 lg:h-7 text-primary" />
+          <IoChevronBackCircle className="w-6 h-5 lg:w-10 lg:h-7 text-ternary"/>
         </button>
         <div className={`rounded-lg mb-8`}>
           <h1 className="text-2xl lg:text-3xl font-bold text-gray-700 dark:text-white">
@@ -44,12 +44,12 @@ const Page = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          <div className="aspect-video bg-gray-200 dark:bg-gray-950 rounded-lg overflow-hidden lg:col-span-3">
+          <div className="bg-gray-200 dark:bg-gray-950 rounded-lg overflow-hidden lg:col-span-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.image}
               alt={project.title}
-              className="object-cover h-full w-full"
+              className="object-cover h-auto w-full"
             />
           </div>
 
@@ -89,7 +89,7 @@ const Page = () => {
                     whileHover={{ x: 5 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <FaGithub className="h-5 w-5"/>
+                    <FaGithub className="h-5 w-5" />
                     <span>Code</span>
                   </motion.a>
                 </motion.div>
@@ -104,11 +104,11 @@ const Page = () => {
               Other images
             </p>
           </button>
-                   {project.otherImages && project.otherImages.length > 0 ? ( // Added .length check
+          {project.otherImages && project.otherImages.length > 0 ? ( 
             project.otherImages.map((imageGroup, index) => (
               <div
                 key={`image-group-${index}`}
-                className="grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-3 gap-5 mt-5" // Added mt-5 for spacing between groups
+                className="grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-3 gap-5 mt-5"
               >
                 {/* Display each image in the group */}
                 {Object.entries(imageGroup).map(([key, imageUrl]) => (
@@ -120,8 +120,8 @@ const Page = () => {
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={imageUrl as string} // Good to keep 'as string' if imageUrl type could vary
-                      alt={`${project.title} other image ${key}`} 
+                      src={imageUrl as string}
+                      alt={`${project.title} other image ${key}`}
                       className="w-full h-auto object-contain rounded-lg"
                     />
                   </motion.div>
@@ -129,7 +129,9 @@ const Page = () => {
               </div>
             ))
           ) : (
-            <p className="text-red-500 mt-4"> {/* Nicer styling for no images */}
+            <p className="text-red-500 mt-4">
+              {" "}
+              {/* Nicer styling for no images */}
               There are no other images uploaded for this project.
             </p>
           )}

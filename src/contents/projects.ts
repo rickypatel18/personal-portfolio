@@ -64,7 +64,7 @@ export const projects: Project[] = [
       "Appointment",
     ],
     githubLink: "https://github.com",
-    image: "/new-project/caredac.webp",
+    image: "/new-project/caredac.png",
     otherImages: [
       {
         oi1: "/new-project/caredac-1.png",
@@ -89,13 +89,6 @@ export const projects: Project[] = [
     ],
     githubLink: "https://github.com",
     image: "/new-project/trailerverse.webp",
-    otherImages: [
-      {
-        oi1: "/new-project/p3-1.png",
-        oi2: "/new-project/p3-2.png",
-        oi3: "/new-project/p2-3.png",
-      },
-    ],
   },
   {
     id: "5",
@@ -151,7 +144,7 @@ export const projects: Project[] = [
       "Fully functional blog uploading website built with Next.js, Tailwind CSS, and sanity studio.",
     fullDescription:
       "This is a fully operational blogging platform that allows users to create an account either manually or through GitHub, utilizing next-auth for authentication. Upon successful registration, users are redirected to the homepage where they can view their list of blog cards. By clicking the upload button, users can create and publish a new blog using the Sanity API. A unique feature of this web application is the ability to track the number of views for each blog post. The platform is built using Next.js, Tailwind CSS, the Sanity API, and next-auth services.",
-    technologies: ["React.js", "JavaScript", "Tailwind CSS",  "Sanity Studio"],
+    technologies: ["React.js", "JavaScript", "Tailwind CSS", "Sanity Studio"],
     githubLink: "https://github.com",
     image: "/new-project/blog.png",
     otherImages: [

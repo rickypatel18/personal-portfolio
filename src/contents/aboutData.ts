@@ -18,7 +18,7 @@ export const skillsData: AboutSkillData[] = [
   },
   {
     id: 3,
-    tech: "Worked with",
+    tech: "Experience with",
     icon: FaGraduationCap,
     items: [
       "Tailwind / Bootstrap",
@@ -36,9 +36,16 @@ export const skillsData: AboutSkillData[] = [
   },
   {
     id: 5,
+    tech: "Working with",
+    icon: FaGraduationCap,
+    items: [ "Next.js", "React.js", "Tailwind CSS"],
+    font: "font-[montserrat]",
+  },
+  {
+    id: 6,
     tech: "Backend",
     icon: FaLaptopCode,
-    items: ["Haven't Mastery in technology", "Prisma / MongoDB"],
+    items: ["Haven't Mastery in technology"],
     font: "font-[montserrat]",
   },
 ];

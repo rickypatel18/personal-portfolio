@@ -73,6 +73,22 @@ a {
   display: inline-block;
 }
 
+.btn-gradgreen {
+  background-image: linear-gradient(
+    to right,
+    #1d976c 0%,
+    #93f9b9 51%,
+    #1d976c 100%
+  );
+  margin: 2px;
+  text-align: center;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 10px rgba(74, 189, 224, 0.3);
+  border-radius: 9999px;
+  display: inline-block;
+}
+
 @layer components {
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;

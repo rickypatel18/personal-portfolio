@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import ContactForm from "./ContactForm";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const email = "patelricky184@gmail.com";
-  const controls = useAnimation();
 
   const barVariants = {
     initial: { scaleY: 0 },
@@ -25,8 +24,6 @@ const Contact = () => {
     },
   };
 
-  const backgroundText = "Connect";
-  const repeatedText = Array(1).fill(backgroundText).join("");
   return (
     <section className="contact-wrapper relative bg-white dark:bg-black text-black dark:text-white pt-10 md:pt-12 overflow-hidden mx-4">
       <aside className="container mx-auto flex flex-col gap-5 lg:gap-6 px-0 text-center relative z-10">
@@ -73,16 +70,6 @@ const Contact = () => {
         </motion.div>
       </aside>
 
-      {/* Animated background text */}
-      <div className="absolute inset-0 flex items-center justify-center text-gray-500 select-none z-0 overflow-hidden">
-        <motion.span
-          className="text-[10vh] md:text-[20vh] lg:text-[25vh] xl:text-[30vh] 2xl:text-[40vh] font-black leading-none tracking-tighter opacity-5 pointer-events-none whitespace-nowrap"
-          animate={controls}
-          initial={{ x: "0%" }}
-        >
-          {repeatedText}
-        </motion.span>
-      </div>
       <section className="contact-form-wrapper relative z-20 mt-2 md:mt-5 lg:mt-10">
         <ContactForm />
       </section>
