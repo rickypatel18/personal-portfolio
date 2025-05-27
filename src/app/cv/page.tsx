@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "View or download the Curriculum Vitae of Ricky Patel, detailing skills, experience, and professional background.",
 };
 
-const CV_PUBLIC_PATH = "Ricky_Resume.pdf";
+const CV_PUBLIC_PATH = "/Ricky_Resume.pdf";
 
 export default function CVPage() {
   return (
@@ -26,7 +26,7 @@ export default function CVPage() {
 
       <Link
         href={CV_PUBLIC_PATH}
-        download="Ricky_Patel_CV"
+        download="Ricky_Patel_CV.pdf"
         className="text-sm md:text-[16px] xl:text-lg w-fit text-white md:w-auto md:px-6 md:py-2 relative overflow-hidden h-10 lg:h-11 px-6 py-1 lg:px-8 lg:py-4 flex justify-center items-center rounded-full bg-primary/90 hover:bg-primary  shadow-2xl hover:shadow-primary/30 transition-all"
       >
         <ClientAnimationWrapper>Download CV</ClientAnimationWrapper>
@@ -42,8 +42,7 @@ export default function CVPage() {
         >
           <div className="p-8 text-center text-gray-700 dark:text-gray-300 flex flex-col items-center justify-center h-full">
             <p className="mb-4 text-lg">
-              It seems your browser doesn&apos;t support embedding PDFs
-              directly.
+              It seems your browser doesn&apos;t support embedding PDFs directly.
             </p>
             <p>
               No worries! You can{" "}
@@ -52,9 +51,13 @@ export default function CVPage() {
                 download="Ricky_Patel_CV"
                 className="text-blue-600 dark:text-blue-400 hover:underline font-semibold"
               >
-                download the PDF or go to &quot;/resume&quot; route
+                download the PDF
               </a>
-              to view it.
+              {" "}or go to the{" "}
+              <Link href="/resume" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                dynamic resume page
+              </Link>
+              {" "}to view it.
             </p>
           </div>
         </iframe>
