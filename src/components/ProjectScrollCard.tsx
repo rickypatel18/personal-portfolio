@@ -29,19 +29,14 @@ const ProjectScrollCard = () => {
                   width: `${100 - Number(item.id) * 2}%`,
                   marginTop: "10px",
                 }}
-                className={`${item.bgColor} lg:border-[0.5px] border-secondary sticky h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] overflow-hidden rounded-lg flex items-center justify-center mx-auto transition-all duration-300`}
+                className={`${item.bgColor} lg:border-[0.5px] border-secondary sticky h-[220px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[600px] overflow-hidden rounded-lg flex items-center justify-center mx-auto transition-all duration-300`}
               >
                 <div className="absolute top-0 bottom-0 w-full h-full">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={item.image}
                     alt="project image"
-                    className="rounded-lg"
-                    style={{
-                      height: "100%",
-                      width: "100%",
-                      objectFit: "cover",
-                    }}
+                    className="rounded-lg h-full w-full object-cover"
                   />
                 </div>
                 <div className="absolute top-50% left-0 max-w-[250px] h-fit xl:max-w-xl p-1 lg:p-2 text-center z-20 bg-primary rounded-l-none rounded-t-3xl flex flex-col font-[delius] font-bold">

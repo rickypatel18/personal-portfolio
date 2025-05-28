@@ -19,7 +19,7 @@ import {
 
 // Helper function to determine margin-top classes based on index and breakpoints
 const getMarginTopClasses = (index: number) => {
-  // ... (your existing getMarginTopClasses function - no changes needed here)
+
   const classes = [];
 
   const smColumnIndex = index % 2;
@@ -28,9 +28,7 @@ const getMarginTopClasses = (index: number) => {
   } else {
     classes.push(`sm:mt-10`);
   }
-
-  if (smColumnIndex === 0) { classes.push("sm:mt-0"); }
-  else { classes.push(`sm:mt-10`); }
+  
   const lgColumnIndex = index % 3;
   if (lgColumnIndex === 0) {
     classes.push("lg:mt-0");
@@ -40,9 +38,6 @@ const getMarginTopClasses = (index: number) => {
     classes.push(`lg:mt-20`);
   }
 
-  if (lgColumnIndex === 0) { classes.push("lg:mt-0"); }
-  else if (lgColumnIndex === 1) { classes.push(`lg:mt-10`); }
-  else { classes.push(`lg:mt-20`); }
   const xlColumnIndex = index % 4;
   if (xlColumnIndex === 0) {
     classes.push("xl:mt-0");
@@ -54,10 +49,6 @@ const getMarginTopClasses = (index: number) => {
     classes.push(`xl:mt-30`);
   }
 
-  if (xlColumnIndex === 0) { classes.push("xl:mt-0"); }
-  else if (xlColumnIndex === 1) { classes.push(`xl:mt-10`); }
-  else if (xlColumnIndex === 2) { classes.push(`xl:mt-20`); }
-  else { classes.push(`xl:mt-30`); }
   return classes.join(" ");
 }
 

@@ -1,7 +1,7 @@
 import { IconType } from "react-icons";
 
 export interface ProjectImages {
-  [key: string]: string; // Allows oi1, oi2, etc.
+  [key: string]: string; // Allows image1, image2, etc.
 }
 
 export interface Project {

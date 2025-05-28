@@ -21,9 +21,9 @@ export const projects: Project[] = [
     image: "/new-project/p1.png",
     otherImages: [
       {
-        oi1: "/new-project/p1-1.png",
-        oi2: "/new-project/p1-2.png",
-        oi3: "/new-project/p1-3.png",
+        image1: "/new-project/p1-1.png",
+        image2: "/new-project/p1-2.png",
+        image3: "/new-project/p1-3.png",
       },
     ],
   },
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     image: "/new-project/caredac.png",
     otherImages: [
       {
-        oi1: "/new-project/caredac-1.png",
+        image1: "/new-project/caredac-1.png",
       },
     ],
   },
@@ -103,9 +103,9 @@ export const projects: Project[] = [
     image: "/new-project/p2.png",
     otherImages: [
       {
-        oi1: "/new-project/p2-1.png",
-        oi2: "/new-project/p2-2.png",
-        oi3: "/new-project/p2-3.png",
+        image1: "/new-project/p2-1.png",
+        image2: "/new-project/p2-2.png",
+        image3: "/new-project/p2-3.png",
       },
     ],
   },
@@ -128,8 +128,8 @@ export const projects: Project[] = [
     image: "/new-project/blog.png",
     otherImages: [
       {
-        oi1: "/new-project/blog-1.png",
-        oi2: "/new-project/blog-2.png",
+        image1: "/new-project/blog-1.png",
+        image2: "/new-project/blog-2.png",
       },
     ],
   },
@@ -154,8 +154,8 @@ export const projects: Project[] = [
     image: "/new-project/p3-1.png",
     otherImages: [
       {
-        oi1: "/new-project/p3-1.png",
-        oi2: "/new-project/p3-2.png",
+        image1: "/new-project/p3-1.png",
+        image2: "/new-project/p3-2.png",
       },
     ],
   },

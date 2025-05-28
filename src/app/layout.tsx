@@ -7,6 +7,7 @@ import ScrollContext from "./scroll-context/ScrollContext";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Loading from "./Loading";
 import { Delius, Montserrat } from "next/font/google";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 const delius = Delius({
   variable: "--font-delius",
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body
         className={`bg-white transition-colors dark:bg-black dark:text-white ${delius.variable} ${montserrat.variable} font-sans`}
       >
+      <ScrollIndicator/>
         <Loading />
         <ThemeProvider>
           <ScrollContext>
