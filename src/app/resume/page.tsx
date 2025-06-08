@@ -90,7 +90,7 @@ const Invoice = () => {
                             that allowed me to further develop my expertise in HTML, CSS, JS and REACT. During this I
                             created CareDac project with a team, Not only did I gain valuable knowledge in these areas, but
                             I also had the opportunity to enhance my skills.</Text>
-                        <Text style={{ paddingLeft: "20px", textAlign: 'justify', paddingTop: "5px" }}>During my previous traning at Elaunch solution,I have finally observed and learned how they code for production-ready applications. I have gained insights into project structure, various designs and animations. Additionally, I have learned Next.js, Framer Motion, and TypeScript at this company. I also had the opportunity to write code for a live project, although it was limited to a few sections and issues. Now, I am nearly fully adhering to the company&apos;s project structure.</Text>
+                        {/* <Text style={{ paddingLeft: "20px", textAlign: 'justify', paddingTop: "5px" }}>During my previous traning at Elaunch solution,I have finally observed and learned how they code for production-ready applications. I have gained insights into project structure, various designs and animations. Additionally, I have learned Next.js, Framer Motion, and TypeScript at this company. I also had the opportunity to write code for a live project, although it was limited to a few sections and issues. Now, I am nearly fully adhering to the company&apos;s project structure.</Text> */}
                     </View>
                 </View>
 
