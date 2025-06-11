@@ -426,7 +426,7 @@ const Invoice = () => {
           </Link>
           .
         </p>
-      </footer>
+      </footer> 
     </div>
   );
 };
