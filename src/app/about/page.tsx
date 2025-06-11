@@ -31,8 +31,7 @@ export default function About() {
           internships, specializing in building responsive, performant, and
           accessible web applications. Strong foundation in modern JavaScript
           (ES6+), React, and Next.js, with expertise in crafting robust
-          solutions through clean, maintainable code. Passionate about UI/UX
-          best practices, cross-browser compatibility, and optimizing
+          solutions through clean, maintainable code. Passionate about cross-browser compatibility, and optimizing
           performance. Collaborative team player with a growth mindset, eager to
           contribute to impactful projects while continuously expanding
           technical skills.
