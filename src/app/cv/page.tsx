@@ -326,11 +326,9 @@ const Invoice = () => {
               Frontend Internship
             </Text>
             <Text style={{ paddingLeft: "20px", textAlign: "justify" }}>
-              During my 3 months{" "}
-              <Text style={{ fontWeight: "bold" }}>acadamic</Text> frontend
-              internship at Techreale, I successfully completed various tasks
-              that allowed me to further develop my expertise in HTML, CSS, JS
-              and REACT. During this I created CareDac project with a team, Not
+              During my 4 months of frontend internship at Techreale, I successfully completed various tasks
+              that allowed me to further develop my expertise in HTML, CSS, JS, TS
+              and REACT, NEXT and more. During this I created CareDac project with a team, Not
               only did I gain valuable knowledge in these areas, but I also had
               the opportunity to enhance my skills.
             </Text>
