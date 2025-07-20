@@ -316,23 +316,30 @@ const Invoice = () => {
               gap: "3px",
             }}
           >
-            <Text
-              style={{
-                fontWeight: "bold",
-                paddingLeft: "10px",
-                fontSize: "11px",
-              }}
-            >
-              Frontend Internship
-            </Text>
+            <div className="flex justify-between">
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  paddingLeft: "10px",
+                  fontSize: "11px",
+                }}
+              >
+                Frontend Internship <Text>[5 Feb – 5 Aug]</Text>
+              </Text>
+            </div>
             <Text style={{ paddingLeft: "20px", textAlign: "justify" }}>
-              During my 3 months{" "}
-              <Text style={{ fontWeight: "bold" }}>acadamic</Text> frontend
-              internship at Techreale, I successfully completed various tasks
-              that allowed me to further develop my expertise in HTML, CSS, JS
-              and REACT. During this I created CareDac project with a team, Not
-              only did I gain valuable knowledge in these areas, but I also had
-              the opportunity to enhance my skills.
+              During my frontend internship at Elaunch solution, I had the
+              opportunity to work on a variety of real-world projects that
+              helped me strengthen my skills in HTML, CSS, JavaScript,
+              TypeScript, React, Next.js, and more. I was involved in building
+              user interfaces, fixing UI/UX bugs, and improving performance in
+              live applications. I also collaborated with senior developers,
+              followed agile practices, and gained experience using tools like
+              Git, VS Code, and APIs. These experiences not only improved my
+              technical knowledge but also boosted my problem-solving and
+              teamwork skills. As I enter the final month of my internship, I
+              feel confident in my abilities and ready to take on more
+              challenging frontend development roles.
             </Text>
             {/* <Text style={{ paddingLeft: "20px", textAlign: 'justify', paddingTop: "5px" }}>During my previous traning at Elaunch solution,I have finally observed and learned how they code for production-ready applications. I have gained insights into project structure, various designs and animations. Additionally, I have learned Next.js, Framer Motion, and TypeScript at this company. I also had the opportunity to write code for a live project, although it was limited to a few sections and issues. Now, I am nearly fully adhering to the company&apos;s project structure.</Text> */}
           </View>
@@ -426,7 +433,7 @@ const Invoice = () => {
           </Link>
           .
         </p>
-      </footer> 
+      </footer>
     </div>
   );
 };
